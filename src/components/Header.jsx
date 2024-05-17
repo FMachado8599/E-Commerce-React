@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { Carrito } from './Carrito'
+import { CartWidget } from './CartWidget'
 import logo from "../multimedia/react.svg"
 
 
@@ -12,7 +12,7 @@ export const Header = () => {
         <h1>FacuCloth</h1>
       </div>
       <Navbar />
-      <Carrito />
+      <CartWidget />
     </header>
   )
 }
