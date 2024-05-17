@@ -45,6 +45,11 @@ body{
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
+    align-items: center;
+}
+nav{
+  display: flex;
+  align-items: center;
 }
 li a{
     padding: 0px 30px;
@@ -53,5 +58,18 @@ li a{
 .productos{
     padding-top: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+.logoTitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.carrito{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

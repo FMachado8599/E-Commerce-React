@@ -4,9 +4,9 @@ const Navbar = () => {
   return (
     <nav>
         <ul className='linksList'>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Ropa</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
         </ul>
     </nav>
   )
