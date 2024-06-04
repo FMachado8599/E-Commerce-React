@@ -1,0 +1,18 @@
+.header{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #d2691e20;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    & .logoTitle{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        & .mainLogo{
+            max-height: 100px;
+        } 
+    }
+}

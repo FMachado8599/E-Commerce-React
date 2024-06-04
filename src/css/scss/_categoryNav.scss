@@ -1,0 +1,29 @@
+.categoryNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & .categoryList{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10svh;
+        & .categoryNavItem{
+            list-style: none;
+            & .categoryItem{
+                text-decoration: none;
+                color: #222;
+                font-weight: 600;
+                text-transform: uppercase;
+                &.active {
+                    font-weight: bold;
+                    text-decoration: underline;
+                    color: orangered;
+                    text-transform: uppercase;
+                }
+            }   
+        }
+    }
+}

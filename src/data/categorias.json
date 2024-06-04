@@ -1,0 +1,17 @@
+[
+      {
+        "id": "panes",
+        "nombre": "panes",
+        "descripcion": "Variedad de panes frescos y deliciosos"
+      },
+      {
+        "id": "bizcochos",
+        "nombre": "bizcochos",
+        "descripcion": "Bizcochos y croissants de distintos sabores"
+      },
+      {
+        "id": "tentempies",
+        "nombre": "tentempies",
+        "descripcion": "Tentempiés variados para cualquier momento del día"
+      }
+]
