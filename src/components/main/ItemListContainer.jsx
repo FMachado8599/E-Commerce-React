@@ -1,30 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Image from 'react-bootstrap/Image';
 import ImagenFondo from "../../multimedia/panes1.webp";
 import db from "../../data/productos.json";
 import CategoryNav from './CategoryNav';
 import { Link } from 'react-router-dom';
+import { DataContext } from '../DataContext';
 
 export const ItemListContainer = ({greeting}) => {
  
-  let [productos, setProductos] = useState([]);
+  const { productos, categorias } = useContext(DataContext);
+  // let [productos, setProductos] = useState([]);
 
-  const productosDb = () =>{
-    return new Promise((resolve,reject) =>{
-      setTimeout(()=>{
-        resolve(db);
-      })
+  // const productosDb = () =>{
+  //   return new Promise((resolve,reject) =>{
+  //     setTimeout(()=>{
+  //       resolve(db);
+  //     })
 
-    })
-  }
+  //   })
+  // }
   
-  useEffect(()=>{
-    productosDb()
-    .then((res)=> {
-      setProductos(res);
-    })
+  // useEffect(()=>{
+  //   productosDb()
+  //   .then((res)=> {
+  //     setProductos(res);
+  //   })
 
-  }, [CategoryNav])
+  // }, [CategoryNav])
 
   return (
 

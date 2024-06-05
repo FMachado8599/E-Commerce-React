@@ -1,18 +1,20 @@
 import React from 'react'
-import categorias from "../../data/categorias.json"
 import { Link, NavLink } from 'react-router-dom'
+import { DataContext } from '../DataContext';
+import { useContext } from 'react';
 
-const CategoryNav = () => {
+const CategoryNav = ({ selectedCategory, setSelectedCategory }) => {
+    const { categorias } = useContext(DataContext);
   return (
     <nav className='categoryNav'>
         <ul className='categoryList'>
             {
                 categorias.map((category) =>{
                     return (
-                        <li className='categoryNavItem'>
-                            <NavLink to={`/categoria/${category.nombre}`} activeclassname="activeNavLink" className={"categoryItem"}>
-                                {category.nombre}
-                            </NavLink>
+                        <li key={category.id}
+                        onClick={() => setSelectedCategory(category.id)}
+                        style={{ cursor: 'pointer', fontWeight: selectedCategory === category.id ? 'bold' : 'normal' }}>
+                        {category.nombre}
                         </li>
                     )
                 })
