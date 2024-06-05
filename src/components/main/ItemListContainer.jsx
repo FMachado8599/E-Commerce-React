@@ -6,7 +6,7 @@ import CategoryNav from './CategoryNav';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataContext';
 
-export const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = ({selectedCategory}) => {
  
   const { productos, categorias } = useContext(DataContext);
   // let [productos, setProductos] = useState([]);
@@ -32,9 +32,10 @@ export const ItemListContainer = ({greeting}) => {
 
     <section className="espacioProductos">
       <Image className='fondoProductos' src={ImagenFondo} thumbnail />      
-      <h1>{greeting}</h1>
+      <h1>Productos</h1>
       <div className='productList'>
-        {productos.map((producto)=>{
+        {
+        productos.filter( pepito => (selectedCategory === "" || pepito.categoria_id === selectedCategory )).map((producto)=>{
             return(
             <div key={producto.id} className='producto'>
               <img src="../../multimedia/panes1.webp" alt="Imagen producto"/>

@@ -8,7 +8,7 @@ const Productos = () => {
   return (
     <div>
       <CategoryNav selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
-      <ItemListContainer greeting={'Productos'}/>
+      <ItemListContainer selectedCategory={selectedCategory}/>
     </div>
   )
 }
