@@ -11,8 +11,13 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        & .mainLogo{
-            max-height: 100px;
-        } 
+        &.navLink{
+            & .mainLogo{
+                width: 50px;
+                height: 50px;
+                max-height: 100px;
+            } 
+        }
+
     }
 }

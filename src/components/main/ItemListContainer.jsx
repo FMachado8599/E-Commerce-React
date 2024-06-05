@@ -34,21 +34,18 @@ export const ItemListContainer = ({greeting}) => {
       <div className='productList'>
         {productos.map((producto)=>{
             return(
-              <div className='producto'>
+            <div key={producto.id} className='producto'>
               <img src="../../multimedia/panes1.webp" alt="Imagen producto"/>
               <h2>{producto.nombre}</h2>
               <h3>{producto.precio}</h3>
               <p>{producto.descripcion}</p>
-              <Link className='irDetalle' to='./ItemDetailed' >Ir a detalle</Link>
+              <Link className='irDetalle' to={`/producto/${producto.id}`}>Ir a detalle</Link>
             </div>
             )
           })
 
           }
       </div>
-
-
-
     </section>
   )
 }
