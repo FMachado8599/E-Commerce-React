@@ -1,8 +1,12 @@
+@import "_Variables";
 @import "_General";
+@import "_mixins";
+
 
 @import "_cartWidget";
 @import "_Header";
 @import "_Navbar";
-@import "_ItemListContainer";
 @import "_categoryNav";
 @import "_Inicio";
+@import "_ItemListContainer";
+@import "_ItemDetailed";

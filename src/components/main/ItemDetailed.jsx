@@ -1,22 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
-import db from "../../data/productos.json";
+import { DataContext } from '../DataContext';
+import ProductBackground from '../../multimedia/panes1.webp';
 
 const ItemDetailed = () => {
-
+  const { productos} = useContext(DataContext);
   const {id} = useParams();
-  // useEffect(()=>{
-  //   console.log('Recibido el id, ', id);
-  //   return ()=>{
-  //     console.log('No se que cosa ', id);
-  //   }
-  // },[id])
 
-  return (
-    <div>
-        <h1>{id}</h1>
-        <h2>Hola estamos probando el detailed prodcuts</h2>
+  const producto = productos.find(producto=> producto.id === parseInt(id));
+
+  if (!producto){
+    return(
+      <div className='productoError'>
+        <p className='mensajeProductoError'>PRODUCTO NO ENCONTRADO</p>
+        <p className='detalleProductoError'>El producto ya no existe</p>
+      </div>
+    )
+  }
+  
+
+  return ( 
+    <div className='productCardContainer'>
+      <div className='productCard'>
+        <img className='productDetailedImg' src={producto.img} alt="" />
+        <div className='productDetailedInfo'>
+          <h1>{producto.nombre}</h1>
+          <h2 className='productDetailedPrice'>${producto.precio}</h2>
+          <p className='productDetailedDescription'>{producto.descripcion}</p>
+          <button className='buyButton'>Añadir al horno</button>
+        </div>
+      </div>
     </div>
+
   )
 }
 

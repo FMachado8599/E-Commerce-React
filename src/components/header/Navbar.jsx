@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { DataContext } from '../DataContext'
 
 const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ const Navbar = () => {
             <li>
               <NavLink to="/" activeclassname="activeNavLink" className="navLink" >Inicio</NavLink>
             </li>
-            <li>
+            <li onClick={() => setSelectedCategory(category.id === selectedCategory ? "" : category.id)}>
               <NavLink to="/productos" activeclassname="active" className="navLink" >Productos</NavLink>
             </li>
             <li>

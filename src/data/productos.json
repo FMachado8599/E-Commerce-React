@@ -4,140 +4,160 @@
     "nombre": "Pan de Centeno",
     "precio": 2.50,
     "descripcion": "Pan integral hecho con harina de centeno",
-    "categoria_id": "panes"
+    "categoria_id": "panes",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 2,
     "nombre": "Baguette",
     "precio": 1.20,
     "descripcion": "Pan francés crujiente",
-    "categoria_id": "panes"
+    "categoria_id": "panes",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 3,
     "nombre": "Pan de Avena",
     "precio": 2.80,
     "descripcion": "Pan suave con avena y miel",
-    "categoria_id": "panes"
+    "categoria_id": "panes",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 4,
     "nombre": "Pan de Masa Madre",
     "precio": 3.00,
     "descripcion": "Pan artesanal fermentado naturalmente",
-    "categoria_id": "panes"
+    "categoria_id": "panes",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 5,
     "nombre": "Pan de Trigo",
     "precio": 2.00,
     "descripcion": "Clásico pan blanco de trigo",
-    "categoria_id": "panes"
+    "categoria_id": "panes",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 6,
     "nombre": "Pan de Multigrano",
     "precio": 2.70,
     "descripcion": "Pan hecho con una mezcla de varios granos",
-    "categoria_id": "panes"
+    "categoria_id": "panes",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 7,
     "nombre": "Croissant de Chocolate",
     "precio": 1.80,
     "descripcion": "Croissant relleno de chocolate",
-    "categoria_id": "bizcochos"
+    "categoria_id": "bizcochos",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 8,
     "nombre": "Croissant de Almendra",
     "precio": 2.00,
     "descripcion": "Croissant relleno de crema de almendra",
-    "categoria_id": "bizcochos"
+    "categoria_id": "bizcochos",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 9,
     "nombre": "Croissant de Frambuesa",
     "precio": 2.20,
     "descripcion": "Croissant relleno de mermelada de frambuesa",
-    "categoria_id": "bizcochos"
+    "categoria_id": "bizcochos",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 10,
     "nombre": "Croissant de Queso",
     "precio": 2.50,
     "descripcion": "Croissant relleno de queso crema",
-    "categoria_id": "bizcochos"
+    "categoria_id": "bizcochos",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 11,
     "nombre": "Bizcocho de Zanahoria",
     "precio": 4.00,
     "descripcion": "Bizcocho de zanahoria con nueces y cobertura de queso crema",
-    "categoria_id": "bizcochos"
+    "categoria_id": "bizcochos",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 12,
     "nombre": "Bizcocho de Limón",
     "precio": 3.20,
     "descripcion": "Bizcocho de limón con glaseado de limón",
-    "categoria_id": "bizcochos"
+    "categoria_id": "bizcochos",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 13,
     "nombre": "Croissant",
     "precio": 1.50,
     "descripcion": "Croissant de mantequilla crujiente",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 14,
     "nombre": "Empanada de Carne",
     "precio": 2.50,
     "descripcion": "Empanada rellena de carne sazonada",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 15,
     "nombre": "Empanada de Pollo",
     "precio": 2.50,
     "descripcion": "Empanada rellena de pollo desmenuzado",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 16,
     "nombre": "Bollito de Canela",
     "precio": 1.80,
     "descripcion": "Bollo dulce con canela y azúcar",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 17,
     "nombre": "Galletas de Chocolate",
     "precio": 1.20,
     "descripcion": "Galletas crujientes con trozos de chocolate",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 18,
     "nombre": "Magdalena",
     "precio": 1.00,
     "descripcion": "Magdalena suave y esponjosa",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 19,
     "nombre": "Churros",
     "precio": 2.00,
     "descripcion": "Churros crujientes con azúcar y canela",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     },
     {
     "id": 20,
     "nombre": "Rosquillas",
     "precio": 1.50,
     "descripcion": "Rosquillas fritas con azúcar glas",
-    "categoria_id": "tentempies"
+    "categoria_id": "tentempies",
+    "img":"/src/multimedia/panes1.webp"
     }
 ]
   

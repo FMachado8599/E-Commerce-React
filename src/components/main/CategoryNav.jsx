@@ -14,7 +14,7 @@ const CategoryNav = ({ selectedCategory, setSelectedCategory }) => {
                         
                         <li key={category.id}
                         onClick={() => setSelectedCategory(category.id === selectedCategory ? "" : category.id)}
-                        style={{ cursor: 'pointer', fontWeight: selectedCategory === category.id ? 'bold' : 'normal' }}>
+                        className={selectedCategory === category.id ? 'CategoryItemSelected' : 'categoryItem'}>
                         {category.nombre}
                         </li>
                     )

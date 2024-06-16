@@ -8,41 +8,24 @@ import { DataContext } from '../DataContext';
 
 export const ItemListContainer = ({selectedCategory}) => {
  
-  const { productos, categorias } = useContext(DataContext);
-  // let [productos, setProductos] = useState([]);
-
-  // const productosDb = () =>{
-  //   return new Promise((resolve,reject) =>{
-  //     setTimeout(()=>{
-  //       resolve(db);
-  //     })
-
-  //   })
-  // }
-  
-  // useEffect(()=>{
-  //   productosDb()
-  //   .then((res)=> {
-  //     setProductos(res);
-  //   })
-
-  // }, [CategoryNav])
+  const { productos } = useContext(DataContext);
 
   return (
 
     <section className="espacioProductos">
       <Image className='fondoProductos' src={ImagenFondo} thumbnail />      
-      <h1>Productos</h1>
+      <h1 className='tituloItemListContainer'>Productos</h1>
       <div className='productList'>
         {
-        productos.filter( pepito => (selectedCategory === "" || pepito.categoria_id === selectedCategory )).map((producto)=>{
+        productos.filter( producto => (selectedCategory === "" || producto.categoria_id === selectedCategory )).map((producto)=>{
             return(
             <div key={producto.id} className='producto'>
-              <img src="../../multimedia/panes1.webp" alt="Imagen producto"/>
-              <h2>{producto.nombre}</h2>
-              <h3>{producto.precio}</h3>
-              <p>{producto.descripcion}</p>
-              <Link className='irDetalle' to={`/producto/${producto.id}`}>Ir a detalle</Link>
+              <img className='imgProduct' src={producto.img} alt={producto.nombre} />
+              <h2 className='productName'>{producto.nombre}</h2>
+              <div className='productInfo'>
+                <Link className='irDetalle' to={`/producto/${producto.id}`}>Ver mas</Link>
+                <h3 className='productPrice'>{producto.precio}<span className='currency'>USD</span></h3>
+              </div>
             </div>
             )
           })

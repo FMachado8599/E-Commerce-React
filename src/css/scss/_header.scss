@@ -6,6 +6,7 @@
     background-color: #d2691e20;
     backdrop-filter: blur(10px);
     border-radius: 10px;
+    padding: 1rem;
     & .logoTitle{
         display: flex;
         flex-direction: row;
@@ -20,4 +21,18 @@
         }
 
     }
+    & .carritoContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & .carrito{
+            width: 40px;
+            height: 40px;
+            &:hover{
+                scale: 1.2;
+                transition: 100ms ease-in-out;
+            }
+        }
+    }
+
 }
