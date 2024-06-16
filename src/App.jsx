@@ -1,4 +1,5 @@
 import { Header } from './components/header/Header';
+import { Footer } from './components/Footer.jsx';
 import Productos from './components/main/Productos';
 import Landing from './components/main/Landing';
 import "./css/styles.css";
@@ -11,7 +12,8 @@ import { DataProvider } from './components/DataContext';
 
 function App() {
 
-
+  
+  
   return (
     <DataProvider>
       <BrowserRouter>
@@ -23,6 +25,7 @@ function App() {
           <Route path='/contacto' element={<Contacto/>}/>;
           <Route path='/producto/:id' element={<ItemDetailed/>}/>;
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </DataProvider>
     )

@@ -14,41 +14,59 @@
         color: gray;
     }
 }
-.productCardContainer{
+
+.productAlignContainer{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .productCardContainer{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: start;
-    .productCard{
-        border-radius: 2rem;
-        margin: 3rem 0 0 3rem;
-        width:70vw;
-        padding: 2rem;
-        max-width: 1500px;
-        background-color: rgb(255, 69, 0,.2);
-        display: flex;
-        flex-direction: row;
-        gap: 2rem;
-        & .productDetailedImg{
-            width: 70%;
-            border-radius: 1rem;
+        & .buttonVolver{
+            @include button-one;
+            background-color: transparent;
+            border: 1px solid orangered;
+            color: orangered;
+            font-weight: 600;
         }
-        & .productDetailedInfo{
+        & .productCard{
+            border-radius: 2rem;
+            margin: 2rem 0 0 0;
+            padding: 2rem;
+            max-width: 1500px;
+            width: 70vw;
+            background-color: rgb(255, 69, 0,.2);
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 20px;
-            & .productDetailedPrice{
-                color: orangered;
-                font-size: 2rem;
+            flex-direction: row;
+            gap: 2rem;
+            box-shadow: 5px 5px 30px rgb(0, 0, 0, .2);
+            & .productDetailedImg{
+                width: 70%;
+                border-radius: 1rem;
+                box-shadow: 5px 5px 20px rgb(0, 0, 0, .3);
             }
-            & .buyButton{
-                @include button-one;
-                width: 200px;
-                border: solid 1px orangered;
-                background-color: rgba(255, 69, 0, .9);
-                font-size: 14px;
+            & .productDetailedInfo{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                & .productDetailedPrice{
+                    color: orangered;
+                    font-size: 2rem;
+                    font-weight: 800;
+                }
+                & .buyButton{
+                    @include button-one;
+                    width: 200px;
+                    border: solid 1px orangered;
+                    background-color: rgba(255, 69, 0, .9);
+                    font-size: 14px;
+                }
             }
-        }
-    
-    } 
+        } 
+    }
 }

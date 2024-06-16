@@ -12,8 +12,7 @@ export const ItemListContainer = ({selectedCategory}) => {
 
   return (
 
-    <section className="espacioProductos">
-      <Image className='fondoProductos' src={ImagenFondo} thumbnail />      
+    <section className="espacioProductos">   
       <h1 className='tituloItemListContainer'>Productos</h1>
       <div className='productList'>
         {
