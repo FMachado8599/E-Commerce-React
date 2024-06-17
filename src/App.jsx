@@ -8,12 +8,11 @@ import SobreNosotros from './components/main/SobreNosotros';
 import Contacto from './components/main/Contacto';
 import ItemDetailed from './components/main/ItemDetailed';
 import { DataProvider } from './components/DataContext';
+import { useState } from 'react';
 
 
 function App() {
-
-  
-  
+    
   return (
     <DataProvider>
       <BrowserRouter>

@@ -94,7 +94,6 @@ p {
   justify-content: center;
   background-color: rgba(210, 105, 30, 0.1254901961);
   backdrop-filter: blur(10px);
-  border-radius: 10px;
   padding: 1rem;
   margin-top: 30px;
 }
@@ -153,6 +152,10 @@ nav .linksList li .navLink.active {
   text-underline-offset: 4px;
   color: #ff4500;
   text-transform: uppercase;
+}
+
+.landing {
+  min-height: 80svh;
 }
 
 .categoryNav {
@@ -286,6 +289,18 @@ nav .linksList li .navLink.active {
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.range-input {
+  position: relative;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .productoError {
