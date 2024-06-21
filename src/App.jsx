@@ -2,13 +2,15 @@ import { Header } from './components/header/Header';
 import { Footer } from './components/Footer.jsx';
 import Productos from './components/main/Productos';
 import Landing from './components/main/Landing';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/styles.css";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SobreNosotros from './components/main/SobreNosotros';
 import Contacto from './components/main/Contacto';
 import ItemDetailed from './components/main/ItemDetailed';
 import { DataProvider } from './components/DataContext';
-import { useState } from 'react';
+// import { useState } from 'react';
+import BoughtToast from './components/utils/BoughtToast.jsx';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
   return (
     <DataProvider>
       <BrowserRouter>
+        <BoughtToast />
         <Header/>
         <Routes>
           <Route path='/' element={<Landing/>}/>;

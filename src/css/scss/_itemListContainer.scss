@@ -4,8 +4,9 @@
     flex-wrap: wrap;
     justify-content: start;
     align-items: center;
+    width: 100%;
     gap: 30px;
-    min-height: calc(100svh - 25svh);
+    min-height: 80svh;
     & .tituloItemListContainer{
         font-size: 48px;
         text-transform: uppercase;
@@ -18,13 +19,19 @@
         top: 0px;
     }
     & .productList{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(
+            300px,
+            1fr
+          )
+        );
+        gap: 2rem;
         justify-content: center;
         align-items: center;
-        max-width: 1200px;
-        gap: 30px;
+        width: 80vw;
+        // max-width: 1500px;
     }
     & .producto{
         width: 300px;
@@ -51,6 +58,7 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            gap: 20px;
             & h2,h3,p{
                 margin: 5px 0px;
             }
@@ -63,6 +71,13 @@
             }
             & .irDetalle{
                 @include button-one;
+                background-color: white;
+                color: orangered;
+                border-color: orangered
+            }
+            & .buyButton{
+                @include button-one;
+                border: none;
             }
         }
 

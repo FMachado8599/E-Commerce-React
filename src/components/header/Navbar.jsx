@@ -1,15 +1,20 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { DataContext } from '../DataContext'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
+
+
+ 
 const Navbar = () => {
+
+  const [ selectedCategory, setSelectedCategory ] = useState("")
   return (
     <nav>
         <ul className='linksList'>
             <li>
               <NavLink to="/" activeclassname="activeNavLink" className="navLink" >Inicio</NavLink>
             </li>
-            <li onClick={() => setSelectedCategory(category.id === selectedCategory ? "" : category.id)}>
+            <li >
               <NavLink to="/productos" activeclassname="active" className="navLink" >Productos</NavLink>
             </li>
             <li>
