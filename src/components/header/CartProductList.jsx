@@ -6,9 +6,6 @@ const CartProductList = () => {
   
   const { cart, addToCart, removeFromCart, deleteFromCart } = useContext(CartContext);
 
-  useEffect(() =>{
-  }, [cart])
-
   return (
     <div>
       {cart.map((producto) => (
