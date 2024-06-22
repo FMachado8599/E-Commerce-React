@@ -20,7 +20,7 @@ export const ItemListContainer = ({ selectedCategory }) => {
 
   const handleAddToCart = (producto) => {
     addToCart(producto);
-    showToast(`Genial! Compraste ${producto.nombre}`);
+    showToast(` ${producto.nombre} x ${producto.quantity??1}`);
   };
 
   return (

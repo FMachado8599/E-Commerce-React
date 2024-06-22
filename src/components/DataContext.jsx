@@ -21,8 +21,8 @@ const [count, setCount] = useState(0);
   }, [count]);
 
   const showToast = (message) => {
-    setToastMessage(message);
     setShow(true);
+    setToastMessage(message);
   };
   
   const deleteFromCart = product =>{

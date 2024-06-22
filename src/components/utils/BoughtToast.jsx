@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { ToastContainer, Toast } from 'react-bootstrap';
-import { ToastContext } from '../DataContext';
+import { ToastContext, DataContext } from '../DataContext';
 
 const BoughtToast = () => {
-  const { show, setShow } = useContext(ToastContext);
+  const { show, setShow, toastMessage } = useContext(ToastContext);
 
   return (
     <ToastContainer className="p-3" position={'bottom-start'} style={{ zIndex: 1 }}>
@@ -14,10 +14,10 @@ const BoughtToast = () => {
             className="rounded me-2"
             alt=""
           />
-          <strong className="me-auto">Añadido al carrito</strong>
+          <strong className="me-auto">Añadido al horno</strong>
           <small>Justo ahora</small>
         </Toast.Header>
-        <Toast.Body>Woohoo</Toast.Body>
+        <Toast.Body>{toastMessage}</Toast.Body>
       </Toast>
     </ToastContainer>
   );
