@@ -1,34 +1,33 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { DataContext } from '../DataContext';
-import Toast from 'react-bootstrap/Toast';
-import BoughtToast from '../utils/BoughtToast';
+import { DataContext, CartContext, ToastContext } from '../DataContext';
+
 
 export const ItemListContainer = ({ selectedCategory }) => {
   const { productos } = useContext(DataContext);
-
-  // Calcular el precio máximo de los productos
+  const { addToCart } = useContext(CartContext);
+  const { showToast } = useContext(ToastContext);
+  
   const maxProductPrice = Math.max(...productos.map(producto => parseFloat(producto.precio)));
 
   const [minPrice, setMinPrice] = useState(0.0);
   const [maxPrice, setMaxPrice] = useState(maxProductPrice);
-
-  const [show, setShow] = useState(false);
 
   const filteredProducts = productos.filter(producto => {
     const price = parseFloat(producto.precio);
     return (selectedCategory === "" || producto.categoria_id === selectedCategory) && price >= minPrice && price <= maxPrice;
   });
 
-  const handleAddToCart = (productName) => {
-    showToast(`Genial! Compraste ${productName}`);
+  const handleAddToCart = (producto) => {
+    addToCart(producto);
+    showToast(`Genial! Compraste ${producto.nombre}`);
   };
 
   return (
     <section className="espacioProductos">   
       <h1 className='tituloItemListContainer'>Productos</h1>
 
-      {/* <div className="filter">
+      <div className="filter">
         <label>
           Min Price:
           <input
@@ -61,7 +60,7 @@ export const ItemListContainer = ({ selectedCategory }) => {
           <span>Min: ${minPrice.toFixed(2)}</span>
           <span>Max: ${maxPrice.toFixed(2)}</span>
         </div>
-      </div> */}
+      </div>
 
       <div className='productList'>
         {filteredProducts.map((producto) => (
@@ -70,7 +69,7 @@ export const ItemListContainer = ({ selectedCategory }) => {
             <h2 className='productName'>{producto.nombre}</h2>
             <div className='productInfo'>
               <Link className='irDetalle' to={`/producto/${producto.id}`}>Ver mas</Link>
-              <button onClick={() => handleAddToCart(producto.nombre)} className='buyButton'>Agregar al carrito</button>
+              <button onClick={() => handleAddToCart(producto)} className='buyButton'>Agregar al carrito</button>
               <h3 className='productPrice'>{producto.precio}<span className='currency'>USD</span></h3>
             </div>
           </div>
