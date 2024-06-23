@@ -23,3 +23,8 @@
     text-align: center;
     box-shadow: 2px 2px 6px rgb(0, 0, 0, .2);
 }
+@mixin titulo-section{
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: 300;
+}

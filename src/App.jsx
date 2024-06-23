@@ -11,6 +11,7 @@ import ItemDetailed from './components/main/ItemDetailed';
 import { DataProvider } from './components/DataContext';
 // import { useState } from 'react';
 import BoughtToast from './components/utils/BoughtToast.jsx';
+import CheckOut from './components/main/CheckOut.jsx';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/sobre_nosotros' element={<SobreNosotros/>}/>;
           <Route path='/contacto' element={<Contacto/>}/>;
           <Route path='/producto/:id' element={<ItemDetailed/>}/>;
+          <Route path='/checkout' element={<CheckOut/>}/>;
         </Routes>
         <Footer/>
       </BrowserRouter>

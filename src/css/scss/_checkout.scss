@@ -1,0 +1,25 @@
+.checkout{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    & .tituloCheckout{
+        @include titulo-section
+    }
+    & .cartProcedure{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 30px;
+        & .cartSummary{
+            width: clamp(300px,30vw,400px) ;
+            height: 500px;
+            border: 1px solid red
+        }
+        & .cartForm{
+            width: clamp(300px,30vw,400px) ;
+        }
+    }
+
+}

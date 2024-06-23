@@ -23,6 +23,11 @@ export const ItemListContainer = ({ selectedCategory }) => {
     showToast(` ${producto.nombre} x ${producto.quantity??1}`);
   };
 
+  const handleRemoveFromCart = (producto) => {
+    removeFromCart(producto);
+    showToast(` ${producto.nombre} x ${producto.quantity??1}`);
+  };
+
   return (
     <section className="espacioProductos">   
       <h1 className='tituloItemListContainer'>Productos</h1>
@@ -65,12 +70,16 @@ export const ItemListContainer = ({ selectedCategory }) => {
       <div className='productList'>
         {filteredProducts.map((producto) => (
           <div key={producto.id} className='producto'>
-            <img className='imgProduct' src={producto.img} alt={producto.nombre} />
+            <Link to={`/producto/${producto.id}`}>
+              <img className='imgProduct' src={producto.img} alt={producto.nombre} />
+            </Link>
+            <h3 className='productPrice'>{producto.precio}<span className='currency'>USD</span></h3>
             <h2 className='productName'>{producto.nombre}</h2>
             <div className='productInfo'>
-              <Link className='irDetalle' to={`/producto/${producto.id}`}>Ver mas</Link>
-              <button onClick={() => handleAddToCart(producto)} className='buyButton'>Agregar al carrito</button>
-              <h3 className='productPrice'>{producto.precio}<span className='currency'>USD</span></h3>
+              <button className="" onClick={() => handleRemoveFromCart(producto)} >-</button>
+              <p>{producto.quantity??1}</p>
+              <button className="" onClick={() => handleAddToCart(producto)} >+</button>
+              <button onClick={() => handleAddToCart(producto)} className='buyButton'>AGREGAR AL HORNO</button>
             </div>
           </div>
         ))}

@@ -8,9 +8,7 @@
     gap: 30px;
     min-height: 80svh;
     & .tituloItemListContainer{
-        font-size: 48px;
-        text-transform: uppercase;
-        font-weight: 300;
+        @include titulo-section
     }
     & .fondoProductos{
         position: absolute;
@@ -34,7 +32,7 @@
         // max-width: 1500px;
     }
     & .producto{
-        width: 300px;
+
         background-color: #ff450030;
         border-radius: 10px;
         overflow: hidden;
@@ -45,11 +43,33 @@
         border: 1px solid rgba(255, 69, 0,.2);
         backdrop-filter: blur(5px);
         box-shadow: 5px 5px 15px rgb(0, 0, 0, .25);
-        & .imgProduct{
-            max-width: 100%;
+        width: 350px;
+        & a{
+            width: 100%;
+            max-height: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            & .imgProduct{
+                width: 100%;
+                aspect-ratio: 4/3;
+                object-fit: cover;
+    
+                &:hover{
+                    scale:1.1;
+                }
+            }
+        }
+        & .productPrice{
+            margin: 0rem 0 10px 2rem;
+            font-size: 16px;
+            & .currency{
+                margin-left: 5px;
+                font-size: 16px;
+            }
         }
         & .productName{
-            margin: 2rem 0 0 2rem;
+            font-size: 20px;
+            margin: 0rem 0 10px 2rem;
         }
         & .productInfo{
             padding: 2rem 2rem 1rem 2rem;
@@ -62,13 +82,6 @@
             & h2,h3,p{
                 margin: 5px 0px;
             }
-            & .productPrice{
-                font-size: 32px;
-                & .currency{
-                    margin-left: 5px;
-                    font-size: 18px;
-                }
-            }
             & .irDetalle{
                 @include button-one;
                 background-color: white;
@@ -78,6 +91,9 @@
             & .buyButton{
                 @include button-one;
                 border: none;
+                font-size: 10px;
+                border-radius: 99rem;
+                width: 150px;
             }
         }
 

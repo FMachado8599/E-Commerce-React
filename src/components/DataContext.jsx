@@ -1,10 +1,16 @@
 import React, { createContext, useState, useEffect } from 'react';
 import productosData from '../data/productos.json';
 import categoriasData from '../data/categorias.json';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase/config';
 
 const DataContext = createContext();
 const ToastContext = createContext();
 const CartContext = createContext();
+
+
+
+
 
 
 const DataProvider = ({ children }) => {
@@ -13,7 +19,25 @@ const DataProvider = ({ children }) => {
   const [show, setShow] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [cart, setCart] = useState([])
+
+  useEffect(() =>{
+    const productRef = collection(db, "productos")
   
+    getDocs(productRef)
+    .then((respuesta) => {
+      
+      setProductos(
+        respuesta.docs.map((doc) => {
+          console.log(doc);
+          return { ...doc.data(), id: doc.id, }
+          
+        })
+      )
+    })
+  }, [categorias])
+  
+
+
 const [count, setCount] = useState(0);
   useEffect(() => {
     setProductos(productosData);
@@ -27,7 +51,6 @@ const [count, setCount] = useState(0);
   
   const deleteFromCart = product =>{
     const productInCart = cart.findIndex(item => item.id === product.id)
-
     cart.splice(productInCart,1);
 
   }
@@ -73,9 +96,13 @@ const [count, setCount] = useState(0);
     setCart([])
   }
 
+  const precioTotal = () => {
+    return cart.reduce((acc, producto) => acc + producto.precio * producto.quantity, 0);
+  }
+
   return (
     <DataContext.Provider value={{ productos, categorias }}>
-      <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, deleteFromCart}}>
+      <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, deleteFromCart, precioTotal}}>
         <ToastContext.Provider value={{ showToast, show, setShow, toastMessage }}>
           {children}
         </ToastContext.Provider>

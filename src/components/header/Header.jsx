@@ -29,7 +29,7 @@ export const Header = () => {
           <OffcanvasTitle>Horno</OffcanvasTitle>
         </OffcanvasHeader>
         <OffcanvasBody>
-          <CartProductList />
+          <CartProductList setShowOffCanvas={setShowOffCanvas} />
         </OffcanvasBody>
       </Offcanvas>
     </header>
