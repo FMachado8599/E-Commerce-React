@@ -5,7 +5,7 @@ import { DataContext, CartContext, ToastContext } from '../DataContext';
 
 export const ItemListContainer = ({ selectedCategory }) => {
   const { productos } = useContext(DataContext);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, removeFromCart } = useContext(CartContext);
   const { showToast } = useContext(ToastContext);
   
   const maxProductPrice = Math.max(...productos.map(producto => parseFloat(producto.precio)));

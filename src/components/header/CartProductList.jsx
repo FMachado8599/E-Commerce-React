@@ -60,4 +60,4 @@ const CartProductList = ({setShowOffCanvas}) => {
   )
 }
 
-export default CartProductList
+export default CartProductList;
