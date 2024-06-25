@@ -95,6 +95,9 @@
                 border-radius: 99rem;
                 width: 150px;
             }
+            & .productAddButton,.productRemoveButton{
+                @include action-button;
+            }
         }
 
     }

@@ -67,14 +67,7 @@
                         margin: 0;
                     }
                     & .cartProductActionButton{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 25px;
-                        aspect-ratio: 1/1;
-                        background-color: rgb(255, 69, 0,.2);
-                        border: transparent;
-                        border-radius: 100%;
+                        @include action-button;
                         & .actionIcon{
                             fill:orangered
                         }

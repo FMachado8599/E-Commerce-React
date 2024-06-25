@@ -76,9 +76,17 @@ export const ItemListContainer = ({ selectedCategory }) => {
             <h3 className='productPrice'>{producto.precio}<span className='currency'>USD</span></h3>
             <h2 className='productName'>{producto.nombre}</h2>
             <div className='productInfo'>
-              <button className="" onClick={() => handleRemoveFromCart(producto)} >-</button>
+              <button className="productRemoveButton" onClick={() => handleRemoveFromCart(producto)} >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-dash actionIcon" viewBox="0 0 16 16">
+                  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                </svg>
+              </button>
               <p>{producto.quantity??1}</p>
-              <button className="" onClick={() => handleAddToCart(producto)} >+</button>
+              <button className="productAddButton" onClick={() => handleAddToCart(producto)} >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-plus actionIcon" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                </svg>
+              </button>
               <button onClick={() => handleAddToCart(producto)} className='buyButton'>AGREGAR AL HORNO</button>
             </div>
           </div>
