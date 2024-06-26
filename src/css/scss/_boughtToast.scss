@@ -1,0 +1,10 @@
+.toastContainer{
+    & .toast{
+        & .toastHeader{
+            & .toastIco{
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}

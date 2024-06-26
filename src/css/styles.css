@@ -52,13 +52,111 @@ p {
   align-items: center;
 }
 
+.range-input {
+  position: relative;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.categoryNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.categoryNav .categoryList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10svh;
+  list-style: none;
+  margin: 2rem 0px;
+}
+.categoryNav .categoryList .categoryItem {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 69, 0, 0.5);
+  border-radius: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  color: orangered;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
+}
+.categoryNav .categoryList .CategoryItemSelected {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 69, 0, 0.5);
+  border-radius: 10px;
+  font-family: "Josefin Sans", sans-serif;
+  color: orangered;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 69, 0, 0.8);
+  color: white;
+  scale: 1.2;
+  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.3);
+  transition: 100ms ease-in;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+nav .linksList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10svh;
+}
+nav .linksList li {
+  list-style: none;
+}
+nav .linksList li .navLink {
+  text-decoration: none;
+  color: #222;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+nav .linksList li .navLink.active {
+  font-weight: bold;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
+  color: #ff4500;
+  text-transform: uppercase;
+}
+
+.toastContainer .toast .toastHeader .toastIco {
+  height: 20px;
+  width: 20px;
+}
+
 .header {
   height: 10svh;
   max-height: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgba(210, 105, 30, 0.1254901961);
+  background-color: rgba(255, 69, 0, 0.1);
   backdrop-filter: blur(10px);
   padding: 1rem;
 }
@@ -99,7 +197,7 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: rgba(210, 105, 30, 0.1254901961);
+  background-color: rgba(255, 69, 0, 0.1);
   backdrop-filter: blur(10px);
   padding: 1rem;
   margin-top: 30px;
@@ -127,38 +225,6 @@ p {
 .footer .carritoContainer .carrito:hover {
   scale: 1.2;
   transition: 100ms ease-in-out;
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-nav .linksList {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10svh;
-}
-nav .linksList li {
-  list-style: none;
-}
-nav .linksList li .navLink {
-  text-decoration: none;
-  color: #222;
-  font-family: "Josefin Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 0.05rem;
-}
-nav .linksList li .navLink.active {
-  font-weight: bold;
-  text-decoration: underline 2px;
-  text-underline-offset: 4px;
-  color: #ff4500;
-  text-transform: uppercase;
 }
 
 .cart {
@@ -259,16 +325,26 @@ nav .linksList li .navLink.active {
   margin-left: 5px;
   font-size: 16px;
 }
+.cart .cartTotals {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.cart .cartTotals h3 span {
+  font-size: large;
+}
 .cart .goToCheckout {
   display: flex;
   justify-content: center;
 }
 .cart .goToCheckout .goToCheckoutButton {
   width: 100px;
-  background-color: orangered;
+  background-color: rgba(255, 68, 0, 0.9);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
   border-radius: 0.5rem;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
@@ -289,72 +365,144 @@ nav .linksList li .navLink.active {
   text-transform: uppercase;
   font-weight: 300;
 }
-.checkout .cartProcedure {
+.checkout .checkoutProcedure {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 30px;
 }
-.checkout .cartProcedure .cartSummary {
+.checkout .checkoutProcedure .checkoutSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
   width: clamp(300px, 30vw, 400px);
-  height: 500px;
-  border: 1px solid red;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 17px;
+  padding: 10px;
+  background-color: rgba(255, 68, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
-.checkout .cartProcedure .cartForm {
+.checkout .checkoutProcedure .checkoutSummary .productCheckout {
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 7px;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .imgProductCheckout {
+  height: 100px;
+  width: 100px;
+  aspect-ratio: 1/1;
+  border-radius: 7px;
+  object-fit: cover;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutNameRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutNameRow .checkoutProductName {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutNameRow .deleteCartProductButton {
+  background-color: transparent;
+  border: none;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutNameRow .deleteCartProductButton .deleteIcon {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(255, 68, 0, 0.2);
+  border-radius: 50%;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutNameRow .deleteCartProductButton .deleteIcon path {
+  fill: orangered;
+  width: 100%;
+  height: 100%;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutProductQuantity {
+  font-family: "Roboto", sans-serif;
+  color: rgba(128, 128, 128, 0.5);
+  font-weight: 700;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductActions {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  align-items: end;
+  gap: 10px;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductActions p {
+  padding: 0;
+  margin: 0;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductActions .checkoutProductActionButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 69, 0, 0.2);
+  border: transparent;
+  border-radius: 100%;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductActions .checkoutProductActionButton .actionIcon {
+  fill: orangered;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductActions .checkoutProductActionButton .actionIcon {
+  fill: orangered;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductPrice {
+  margin: 0;
+  margin-right: 5px;
+  font-size: 20px;
+}
+.checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductPrice .currency {
+  margin-left: 5px;
+  font-size: 16px;
+}
+.checkout .checkoutProcedure .checkoutForm {
   width: clamp(300px, 30vw, 400px);
+}
+.checkout .checkoutProcedure .checkoutForm .formLabel {
+  color: orangered;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+.checkout .checkoutProcedure .checkoutForm .sendFormButton {
+  width: 100px;
+  background-color: rgba(255, 68, 0, 0.9);
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .landing {
   min-height: 80svh;
-}
-
-.categoryNav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.categoryNav .categoryList {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10svh;
-  list-style: none;
-  margin: 2rem 0px;
-}
-.categoryNav .categoryList .categoryItem {
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 69, 0, 0.5);
-  border-radius: 10px;
-  font-family: "Josefin Sans", sans-serif;
-  color: orangered;
-  backdrop-filter: blur(5px);
-  cursor: pointer;
-  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
-}
-.categoryNav .categoryList .CategoryItemSelected {
-  text-decoration: none;
-  color: #222;
-  font-weight: 600;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 69, 0, 0.5);
-  border-radius: 10px;
-  font-family: "Josefin Sans", sans-serif;
-  color: orangered;
-  backdrop-filter: blur(5px);
-  cursor: pointer;
-  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
-  background-color: rgba(255, 69, 0, 0.8);
-  color: white;
-  scale: 1.2;
-  box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.3);
-  transition: 100ms ease-in;
 }
 
 .landing {
@@ -400,7 +548,7 @@ nav .linksList li .navLink.active {
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
-  border: 1px solid rgba(255, 69, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
   width: 350px;
@@ -445,10 +593,11 @@ nav .linksList li .navLink.active {
 }
 .espacioProductos .producto .productInfo .irDetalle {
   width: 100px;
-  background-color: orangered;
+  background-color: rgba(255, 68, 0, 0.9);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
   border-radius: 0.5rem;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
@@ -459,10 +608,11 @@ nav .linksList li .navLink.active {
 }
 .espacioProductos .producto .productInfo .buyButton {
   width: 100px;
-  background-color: orangered;
+  background-color: rgba(255, 68, 0, 0.9);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
   border-radius: 0.5rem;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
@@ -484,18 +634,6 @@ nav .linksList li .navLink.active {
 }
 .espacioProductos .producto .productInfo .productAddButton .actionIcon, .espacioProductos .producto .productInfo .productRemoveButton .actionIcon {
   fill: orangered;
-}
-
-.range-input {
-  position: relative;
-  width: 100%;
-  margin: 1em 0;
-}
-
-.values {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
 }
 
 .productoError {
@@ -530,10 +668,11 @@ nav .linksList li .navLink.active {
 }
 .productAlignContainer .productCardContainer .buttonVolver {
   width: 100px;
-  background-color: orangered;
+  background-color: rgba(255, 68, 0, 0.9);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
   border-radius: 0.5rem;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
@@ -573,10 +712,11 @@ nav .linksList li .navLink.active {
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .buyButton {
   width: 100px;
-  background-color: orangered;
+  background-color: rgba(255, 68, 0, 0.9);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
   border-radius: 0.5rem;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;

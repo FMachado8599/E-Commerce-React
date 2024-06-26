@@ -7,19 +7,117 @@
     & .tituloCheckout{
         @include titulo-section
     }
-    & .cartProcedure{
+    & .checkoutProcedure{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         gap: 30px;
-        & .cartSummary{
+        & .checkoutSummary{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 10px;
+            align-items: center;
             width: clamp(300px,30vw,400px) ;
-            height: 500px;
-            border: 1px solid red
-        }
-        & .cartForm{
+            border: 2px solid rgba(255,255,255,.18);
+            border-radius: 17px;
+            padding: 10px;
+            background-color: rgb(255, 68, 0,.5);
+            backdrop-filter: blur(5px);
+            & .productCheckout{
+                flex-direction: row;
+                width: 100%;
+                gap: 10px;
+                background-color: rgba(255,255,255,.8);
+                padding: 10px;
+                border-radius: 7px;
+                & .imgProductCheckout{
+                    height: 100px;
+                    width: 100px;
+                    aspect-ratio: 1/1;
+                    border-radius: 7px;
+                    object-fit: cover;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    }
+                & .checkoutProductInfo{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 70%;
+                    & .checkoutNameRow{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        & .checkoutProductName{
+                            font-size: 18px;
+                            font-weight: 800;
+                            margin: 0;
+                        }
+                        & .deleteCartProductButton{
+                            background-color: transparent;
+                            border: none;
+                            & .deleteIcon{
+                                width: 25px;
+                                height: 25px;
+                                background-color: rgb(255, 68, 0,.2);
+                                border-radius: 50%;
+                                & path{
+                                    fill: orangered;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                    & .checkoutProductQuantity{
+                        font-family: $font-p;
+                        color:  rgba(128, 128, 128,.5);
+                        font-weight: 700;
+                    }
+                    & .checkoutActionsRow{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: end;
+                        & .checkoutProductActions{
+                            display: flex;
+                            justify-content: end;
+                            flex-direction: row;
+                            align-items: end;
+                            gap: 10px;
+                            & p{
+                                padding: 0;
+                                margin: 0;
+                            }
+                            & .checkoutProductActionButton{
+                                @include action-button;
+                                & .actionIcon{
+                                    fill:orangered
+                                }
+                            }
+                        }
+                        & .checkoutProductPrice{
+                            margin: 0;
+                            margin-right: 5px;
+                            font-size: 20px;
+                            & .currency{
+                                margin-left: 5px;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }   
+        & .checkoutForm{
             width: clamp(300px,30vw,400px) ;
+            & .formLabel{
+                @include form-label-style;
+            }
+            & .sendFormButton{
+                @include button-one;
+            }
         }
     }
-
 }

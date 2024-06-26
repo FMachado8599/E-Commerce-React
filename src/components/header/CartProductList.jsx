@@ -8,6 +8,8 @@ const CartProductList = ({setShowOffCanvas}) => {
   
   const { cart, addToCart, removeFromCart, deleteFromCart, precioTotal } = useContext(CartContext);
 
+  console.log(precioTotal)
+
   return (
     <div className='cart'>
       <div>
@@ -47,7 +49,8 @@ const CartProductList = ({setShowOffCanvas}) => {
             ))}
         </div>
         <div className='cartTotals'>
-          <h2>{precioTotal}</h2>
+          <h2>Total:</h2>
+          <h3>{precioTotal()} <span>USD</span></h3>
         </div>
       </div>
       <div className='goToCheckout'>

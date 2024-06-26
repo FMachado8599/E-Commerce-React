@@ -85,6 +85,17 @@
             }
         }
     }
+    & .cartTotals{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        & h3{
+            & span{
+                font-size: large;
+            }
+        }
+    }
     & .goToCheckout{
         display: flex;
         justify-content: center;

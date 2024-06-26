@@ -71,7 +71,7 @@ export const ItemListContainer = ({ selectedCategory }) => {
         {filteredProducts.map((producto) => (
           <div key={producto.id} className='producto'>
             <Link to={`/producto/${producto.id}`}>
-              <img className='imgProduct' src={producto.img} alt={producto.nombre} />
+              <img className='imgProduct' src={producto.thumbnail} alt={producto.nombre} />
             </Link>
             <h3 className='productPrice'>{producto.precio}<span className='currency'>USD</span></h3>
             <h2 className='productName'>{producto.nombre}</h2>
