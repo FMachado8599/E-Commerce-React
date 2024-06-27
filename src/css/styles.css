@@ -710,7 +710,18 @@ nav .linksList li .navLink.active {
   font-size: 2rem;
   font-weight: 800;
 }
-.productAlignContainer .productCardContainer .productCard .productDetailedInfo .buyButton {
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addToCartSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addToCartSection .quantityDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addToCartSection .buyButton {
   width: 100px;
   background-color: rgba(255, 68, 0, 0.9);
   padding: 0.5rem;
@@ -725,6 +736,126 @@ nav .linksList li .navLink.active {
   border: solid 1px orangered;
   background-color: rgba(255, 69, 0, 0.9);
   font-size: 14px;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addToCartSection .addedToCart {
+  width: 100px;
+  background-color: rgba(255, 68, 0, 0.9);
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  border: solid 1px orangered;
+  background-color: rgba(255, 69, 0, 0.9);
+  font-size: 14px;
+  flex-direction: row;
+  justify-content: center;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .addedQuantity {
+  margin: 0px;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .actionButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  aspect-ratio: 1/1;
+  background-color: rgba(255, 69, 0, 0.2);
+  border: transparent;
+  border-radius: 100%;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .actionButton .actionIcon {
+  fill: orangered;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .buyButton {
+  width: 100px;
+  background-color: rgba(255, 68, 0, 0.9);
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  border: solid 1px orangered;
+  background-color: rgba(255, 69, 0, 0.9);
+  font-size: 14px;
+}
+.productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .addedToCart {
+  width: 100px;
+  background-color: rgba(255, 68, 0, 0.9);
+  padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  border: solid 1px orangered;
+  background-color: rgba(255, 69, 0, 0.9);
+  font-size: 14px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.quantityDiv {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.quantityDiv-enter {
+  opacity: 0;
+}
+
+.quantityDiv-enter-active {
+  opacity: 1;
+}
+
+.quantityDiv-exit {
+  opacity: 1;
+}
+
+.quantityDiv-exit-active {
+  opacity: 0;
+}
+
+.addToCartSection {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.addToCartSection.added {
+  transform: scale(1.1);
+}
+
+.buyButton.addedToCart {
+  background-color: green;
+  color: white;
+  transform: scale(1.1);
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
 /*# sourceMappingURL=styles.css.map */

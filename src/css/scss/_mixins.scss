@@ -48,3 +48,10 @@
     font-weight: 600;
     font-size: 18px;
 }
+@mixin buy-button{
+    @include button-one;
+    width: 200px;
+    border: solid 1px orangered;
+    background-color: rgba(255, 69, 0, .9);
+    font-size: 14px;
+}

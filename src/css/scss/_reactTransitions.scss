@@ -1,0 +1,39 @@
+.quantityDiv {
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .quantityDiv-enter {
+    opacity: 0;
+  }
+  
+  .quantityDiv-enter-active {
+    opacity: 1;
+  }
+  
+  .quantityDiv-exit {
+    opacity: 1;
+  }
+  
+  .quantityDiv-exit-active {
+    opacity: 0;
+  }
+  
+  .addToCartSection {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .addToCartSection.added {
+    transform: scale(1.1);
+  }
+  
+  .buyButton.addedToCart {
+    background-color: green;
+    color: white;
+    transform: scale(1.1);
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+  }

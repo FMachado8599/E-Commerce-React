@@ -8,11 +8,6 @@ const DataContext = createContext();
 const ToastContext = createContext();
 const CartContext = createContext();
 
-
-
-
-
-
 const DataProvider = ({ children }) => {
   const [productos, setProductos] = useState([]);
   const [categorias, setCategorias] = useState([]);

@@ -15,7 +15,7 @@ const BoughtToast = () => {
             className="rounded me-2 toastIco"
             alt="Horno"
           />
-          <strong className="me-auto">Añadido al horno</strong>
+          <strong className="me-auto">Horno actualizado</strong>
           <small>Justo ahora</small>
         </Toast.Header>
         <Toast.Body>{toastMessage}</Toast.Body>

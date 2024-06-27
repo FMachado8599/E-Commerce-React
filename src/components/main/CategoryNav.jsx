@@ -26,6 +26,5 @@ const CategoryNav = ({ selectedCategory, setSelectedCategory }) => {
 }
 
 export default CategoryNav
-
-
+ 
 

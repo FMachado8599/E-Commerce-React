@@ -59,12 +59,50 @@
                     font-size: 2rem;
                     font-weight: 800;
                 }
-                & .buyButton{
-                    @include button-one;
-                    width: 200px;
-                    border: solid 1px orangered;
-                    background-color: rgba(255, 69, 0, .9);
-                    font-size: 14px;
+                & .addToCartSection{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    & .quantityDiv{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: row
+                    }
+                    & .buyButton{
+                        @include buy-button;
+                    }
+                    & .addedToCart{
+                        @include buy-button;
+                        flex-direction: row;
+                        justify-content: center ;
+                    }
+                }
+                & .addedToCartSection{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    & .quantityDiv{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: row;
+                        gap: 10px;
+                        & .addedQuantity{
+                            margin: 0px;
+                        }
+                        & .actionButton{
+                            @include action-button;
+                        }
+                    }
+                    & .buyButton{
+                        @include buy-button;
+                    }
+                    & .addedToCart{
+                        @include buy-button;
+                        flex-direction: row;
+                        justify-content: center ;
+                    }
                 }
             }
         } 
