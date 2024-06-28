@@ -45,11 +45,45 @@ p {
   font-weight: 300;
 }
 
-.carrito {
+.carritoContainer {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.carritoContainer .carrito {
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+}
+.carritoContainer .carrito:hover {
+  scale: 1.2;
+  transition: 100ms ease-in-out;
+}
+.carritoContainer div {
+  overflow: visible;
+  display: flex;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-20px, -20px);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  background-color: orangered;
+  padding: 5px;
+  z-index: 10;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+}
+.carritoContainer div .cartQuantity {
+  text-align: center;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  z-index: 10;
 }
 
 .range-input {
@@ -79,6 +113,9 @@ p {
   list-style: none;
   margin: 2rem 0px;
 }
+.categoryNav .categoryList .categoryNavItem {
+  transition: 100ms ease-in;
+}
 .categoryNav .categoryList .categoryItem {
   text-decoration: none;
   color: #222;
@@ -92,6 +129,10 @@ p {
   backdrop-filter: blur(5px);
   cursor: pointer;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
+  transition: 200ms ease-in;
+}
+.categoryNav .categoryList .categoryItem:hover {
+  scale: 1.1;
 }
 .categoryNav .categoryList .CategoryItemSelected {
   text-decoration: none;
@@ -185,6 +226,7 @@ nav .linksList li .navLink.active {
 .header .carritoContainer .carrito {
   width: 40px;
   height: 40px;
+  z-index: 1;
 }
 .header .carritoContainer .carrito:hover {
   scale: 1.2;
@@ -635,6 +677,17 @@ nav .linksList li .navLink.active {
 .espacioProductos .producto .productInfo .productAddButton .actionIcon, .espacioProductos .producto .productInfo .productRemoveButton .actionIcon {
   fill: orangered;
 }
+.espacioProductos .producto .productInfo .quantityDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.espacioProductos .producto .productInfo .quantityDiv .addedQuantity {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
 
 .productoError {
   height: 100svh;
@@ -687,7 +740,7 @@ nav .linksList li .navLink.active {
   margin: 2rem 0 0 0;
   padding: 2rem;
   max-width: 1500px;
-  width: 70vw;
+  width: fit-content;
   background-color: rgba(255, 69, 0, 0.2);
   display: flex;
   flex-direction: row;
@@ -696,6 +749,7 @@ nav .linksList li .navLink.active {
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedImg {
   width: 70%;
+  max-width: 600px;
   border-radius: 1rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 }
@@ -769,6 +823,8 @@ nav .linksList li .navLink.active {
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .addedQuantity {
   margin: 0px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .actionButton {
   display: flex;

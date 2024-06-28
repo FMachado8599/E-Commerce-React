@@ -98,6 +98,17 @@
             & .productAddButton,.productRemoveButton{
                 @include action-button;
             }
+            & .quantityDiv{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                gap: 10px;
+                & .addedQuantity{
+                    font-family: $font-p;
+                    font-weight: 400;
+                }
+            }
         }
 
     }

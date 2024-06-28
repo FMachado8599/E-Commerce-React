@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { DataContext, CartContext, ToastContext } from '../DataContext';
+import { CartContext, ToastContext } from '../DataContext';
 import { Link } from 'react-router-dom';
 import { db } from "../../firebase/config"
 import { doc, getDoc} from "firebase/firestore"
@@ -30,36 +30,46 @@ const ItemDetailed = () => {
     if (productInCart) {
       setQuantity(productInCart.quantity);
       setShowQuantityDiv(true);
+    } else {
+      setQuantity(1);
+      setShowQuantityDiv(false);
     }
   }, [cart, id]);
 
-  const handleAddToCart = (producto) => {
-    addToCart(producto);
-    showToast(` ${producto.nombre} x ${quantity-1}`);
-    setShowQuantityDiv(true);
-  };
 
   const handleRemoveFromCart = (producto) => {
     removeFromCart(producto);
-    showToast(` ${producto.nombre} x ${quantity-1}`);
+    showToast(` ${producto.nombre} x ${quantity}`);
   };
   
+  const handleAddToCart = (producto) => {
+    addToCart(producto);
+    showToast(` ${producto.nombre} x ${quantity}`);
+    setShowQuantityDiv(true);
+  };
+
   const handleIncreaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
+
+    setQuantity((prevQuantity) => prevQuantity + 1 );
     addToCart({ ...producto, quantity: quantity + 1 });
+    showToast(` ${producto.nombre} x ${quantity + 1 }`);
   };
 
   const handleDecreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity((prevQuantity) => prevQuantity - 1);
-      removeFromCart({ ...producto, quantity: quantity - 1 });
-      showToast(` ${producto.nombre} x ${quantity-1}`);
-    } else if (quantity == 1){
+      handleRemoveFromCart(producto);
+      showToast(`${producto.nombre} x ${quantity - 1}`);
+    } else {
       setQuantity(0);
       setShowQuantityDiv(false);
       deleteFromCart(producto);
+      showToast(`${producto.nombre} fuera del horno`);
     }
   };
+
+
+
 
   if (!producto){
     return(

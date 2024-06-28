@@ -12,12 +12,18 @@
         gap: 10svh;
         list-style: none;
         margin: 2rem 0px;
+
         & .categoryNavItem{
+            transition: 100ms ease-in;
 
-
-            }
+        }
+            
         & .categoryItem{
             @include category-item;
+            transition: 200ms ease-in;
+            &:hover{
+                scale:1.1;
+            }
         }
         & .CategoryItemSelected {
             @include category-item;
