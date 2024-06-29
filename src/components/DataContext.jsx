@@ -1,6 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-import productosData from '../data/productos.json';
-import categoriasData from '../data/categorias.json';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
@@ -23,45 +21,42 @@ const DataProvider = ({ children }) => {
       
       setProductos(
         respuesta.docs.map((doc) => {
-          console.log(doc);
           return { ...doc.data(), id: doc.id, }
           
         })
       )
     })
-  }, [categorias])
+  }, [])
   
 
 
-const [count, setCount] = useState(0);
-  useEffect(() => {
-    setProductos(productosData);
-    setCategorias(categoriasData);
-  }, [count]);
+// const [count, setCount] = useState(0);
+//   useEffect(() => {
+//     setProductos(productosData);
+//     setCategorias(categoriasData);
+//   }, [count]);
 
   const showToast = (message) => {
     setShow(true);
     setToastMessage(message);
   };
   
-  const deleteFromCart = product =>{
-    const productInCart = cart.findIndex(item => item.id === product.id)
-    cart.splice(productInCart,1);
-
+  const deleteFromCart = product => {
+    const newCart = cart.filter(item => item.id !== product.id);
+    setCart(newCart); 
   }
 
   const removeFromCart = product => {
     const productInCart = cart.findIndex(item => item.id === product.id)
     
-    if(productInCart >= 0) {
-      if(product.quantity == 1) {
-        deleteFromCart(product)
+    if (productInCart >= 0) {
+      const newCart = structuredClone(cart);
+      if (newCart[productInCart].quantity === 1) {
+        newCart.splice(productInCart, 1);
+      } else {
+        newCart[productInCart].quantity -= 1;
       }
-      else{
-        const newCart = structuredClone(cart)
-        newCart[productInCart].quantity -= 1
-        setCart(newCart)
-      }
+      setCart(newCart);
     }
 
   }
@@ -95,9 +90,13 @@ const [count, setCount] = useState(0);
     return cart.reduce((acc, producto) => acc + producto.precio * producto.quantity, 0);
   }
 
+  const cartQuantity = () => {
+    return cart.reduce((acc,producto) => acc + producto.quantity, 0);
+  }
+
   return (
     <DataContext.Provider value={{ productos, categorias }}>
-      <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, deleteFromCart, precioTotal}}>
+      <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, deleteFromCart, precioTotal, cartQuantity}}>
         <ToastContext.Provider value={{ showToast, show, setShow, toastMessage }}>
           {children}
         </ToastContext.Provider>

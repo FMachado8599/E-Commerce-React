@@ -1,23 +1,78 @@
 import React from 'react'
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../DataContext';
 import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
+import { db } from "../../firebase/config"
+import { collection, addDoc, getDocs} from "firebase/firestore"
 
 const CheckOut = () => {
-    const { cart, addToCart, removeFromCart, deleteFromCart, precioTotal } = useContext(CartContext);
+    const { cart, addToCart, removeFromCart, deleteFromCart, precioTotal, clearCart } = useContext(CartContext);
 
     const { register, handleSubmit } = useForm();
+
+    const [pedidoId, setPedidoId] = useState("");
+
+    const [pedidoData, setPedidoData] = useState(null);
 
     const send = (data) => {
 
         const pedido = {
             cliente: data,
             productos: cart,
-            total: precioTotal
+            total: precioTotal()
         }
-        console.log(pedido);
+
+        const pedidosRef = collection(db, "pedidos");
+
+        addDoc(pedidosRef, pedido)
+        .then((doc) => {
+            setPedidoId(doc.id);
+            clearCart();
+        })
+
     }
+
+    useEffect(() =>{
+      const pedidoRef = collection(db, "pedido")
+    
+      getDocs(pedidoRef)
+      .then((respuesta) => {
+        
+        setPedidoData(
+          respuesta.docs.map((doc) => {
+            console.log(doc);
+            return { ...doc.data(), id: doc.id, }
+            
+          })
+        )
+      })
+    }, [])
+
+  if (pedidoId) {
+    return (
+        <div className="Invoice">
+            <h1 className="main-title">Muchas gracias por tu compra!</h1>
+            <p>El id de tu pedido es: {pedidoId}</p>
+            <p>Nos encargaremos de guardar el id de tu pedido hasta que recibas tu compra, siempre puedes consultarlo en tu perfil, en la seccion de pedidos</p>
+            <div>
+              {pedidoData && (
+                  <div>
+                      <h3>Detalles del Pedido</h3>
+                      <p>Cliente: {JSON.stringify(pedidoData.cliente)}</p>
+                      <p>Total: {pedidoData.total}</p>
+                      <h4>Productos:</h4>
+                      <ul>
+                          {pedidoData.productos.map((producto, index) => (
+                              <li key={index}>{JSON.stringify(producto)}</li>
+                          ))}
+                      </ul>
+                  </div>
+              )}
+            </div>
+        </div>
+    )
+  }
 
   return (
     <div className='checkout'>
@@ -73,7 +128,7 @@ const CheckOut = () => {
                     <Form.Control type="phone" placeholder="Ingresa tu celular/teléfono" {...register("telefono")} />
                 </Form.Group>
 
-                <button className='sendFormButton' type='send'>Comprar</button>
+                <button className='sendFormButton' onClick={clearCart} type='send'>Comprar</button>
             </form>
         </div>
 

@@ -1,3 +1,83 @@
 .landing{
-    min-height: 80svh;
+    min-height: 50svh;
+    max-height: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .videoLanding{
+        position: absolute;
+        top: 0px;
+        z-index: -10;
+        opacity: .6;
+        width: 100vw;
+        mask-image: linear-gradient(to bottom,white 80%,transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom,white,trasparent);
+    }
+    & .landingLogo{
+        width: 20vw;
+        min-width: 300px;
+    }
+    & .landingTitle{
+        font-size: 68px;
+        font-family: $font-titulo;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $lime-12;
+    }
+
+}
+.chamuyoSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow( 0px 5px 10px rgba(0, 0, 0, 0.7));
+
+    & .chamuyoContainer{
+        
+        display: grid;
+        max-width: 1000px;
+        grid-template-columns: 1fr 300px 1fr;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: $lime-a7;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, .3));
+        height: 150px;
+        overflow: visible;
+        & .chamuyoTitle{
+            text-align: left;
+            font-weight: 600;
+            font-size: 28px;
+        }
+        & .imgChamuyo{
+            position: absolute;
+            left:0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 300px;
+            z-index: 2;
+            filter: drop-shadow( 0px 5px 10px rgba(0, 0, 0, 0.5));
+        }
+        & .chamuyoTitle2{
+            grid-column: 3;
+            text-align: right;
+            font-weight: 600;
+            font-size: 28px;
+        }
+    }
+}
+.contactSection{
+    min-height: 60svh;
+}
+.imageFooter{
+        position: absolute;
+        bottom: 0px;
+        width: 100vw;
+        z-index: -11;
 }

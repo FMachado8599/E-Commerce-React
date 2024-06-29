@@ -15,16 +15,17 @@ nav{
             list-style: none;
             & .navLink{
                 text-decoration: none;
-                color: #222;
+                color: $lime-12;
                 font-family: $font-titulo;
                 text-transform: uppercase;
-                font-weight: 500;
-                letter-spacing: .05rem;
+                font-weight: 700;
+                letter-spacing: .06rem;
                 &.active {
-                    font-weight: bold;
+                    font-weight: 900;
+                    font-size: 19px;
                     text-decoration: underline 2px;
                     text-underline-offset: 4px;
-                    color: #ff4500;
+                    color: $lime-12;
                     text-transform: uppercase;
                     
                 }

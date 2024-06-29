@@ -8,8 +8,6 @@ const CartProductList = ({setShowOffCanvas}) => {
   
   const { cart, addToCart, removeFromCart, deleteFromCart, precioTotal } = useContext(CartContext);
 
-  console.log(precioTotal)
-
   return (
     <div className='cart'>
       <div>
