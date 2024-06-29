@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { db } from "../../firebase/config"
 import { doc, getDoc} from "firebase/firestore"
 import { CSSTransition } from 'react-transition-group';
+import Spinner from 'react-bootstrap/Spinner';
 
 const ItemDetailed = () => {
   // const { producto , setProductos } = useContext(DataContext);
@@ -14,6 +15,7 @@ const ItemDetailed = () => {
   const [ producto, setProductos ] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [showQuantityDiv, setShowQuantityDiv] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
 
@@ -69,7 +71,26 @@ const ItemDetailed = () => {
   };
 
 
+  useEffect(() => {
+    if (loading) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 200);  // Espera 1 segundo
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
 
+  if (loading) {
+    return (
+      <div className='spinnerContainer'>
+        <Spinner className='spinner' animation="border" role="status">
+          <span className="visually-hidden"></span>
+        </Spinner>
+        <h1>Cargando...</h1>
+      </div>
+
+    );
+  }
 
   if (!producto){
     return(

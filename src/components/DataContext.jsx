@@ -1,6 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-import productosData from '../data/productos.json';
-import categoriasData from '../data/categorias.json';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
@@ -23,21 +21,20 @@ const DataProvider = ({ children }) => {
       
       setProductos(
         respuesta.docs.map((doc) => {
-          console.log(doc);
           return { ...doc.data(), id: doc.id, }
           
         })
       )
     })
-  }, [categorias])
+  }, [])
   
 
 
-const [count, setCount] = useState(0);
-  useEffect(() => {
-    setProductos(productosData);
-    setCategorias(categoriasData);
-  }, [count]);
+// const [count, setCount] = useState(0);
+//   useEffect(() => {
+//     setProductos(productosData);
+//     setCategorias(categoriasData);
+//   }, [count]);
 
   const showToast = (message) => {
     setShow(true);

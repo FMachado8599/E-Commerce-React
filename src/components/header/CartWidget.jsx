@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import carrito from '../../multimedia/icons/oven.png';
+import carrito from '../../multimedia/icons/oven.svg';
 import { CartContext } from '../DataContext';
 
 export const CartWidget = ({showOffCanvas}) => {

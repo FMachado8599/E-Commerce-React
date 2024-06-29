@@ -15,6 +15,18 @@
     }
 }
 
+.spinnerContainer{
+    display: flex;
+    align-items: center;
+    min-height: 10svh;
+    justify-content: center;
+    gap: 20px;
+    & .spinner{
+        color: orangered;
+
+    }
+}
+
 .productAlignContainer{
     display: flex;
     flex-direction: column;
