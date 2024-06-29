@@ -1,4 +1,3 @@
-import React from 'react';
 import video from '../../multimedia/videos/bread-bakery-compressed.mp4';
 import logo from "../../multimedia/icons/croissant.svg";
 import imgFooter from "../../multimedia/panes-preparacion.webp";

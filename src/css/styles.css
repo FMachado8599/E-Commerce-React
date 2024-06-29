@@ -166,14 +166,13 @@ p {
 }
 .categoryNav .categoryList .categoryItem {
   text-decoration: none;
-  color: #222;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 69, 0, 0.5);
+  border: 1px solid rgba(118, 160, 95, 0.7);
   border-radius: 10px;
   font-family: "Josefin Sans", sans-serif;
-  color: orangered;
+  color: rgb(118, 160, 95);
   backdrop-filter: blur(5px);
   cursor: pointer;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
@@ -184,14 +183,13 @@ p {
 }
 .categoryNav .categoryList .CategoryItemSelected {
   text-decoration: none;
-  color: #222;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 69, 0, 0.5);
+  border: 1px solid rgba(118, 160, 95, 0.7);
   border-radius: 10px;
   font-family: "Josefin Sans", sans-serif;
-  color: orangered;
+  color: rgb(118, 160, 95);
   backdrop-filter: blur(5px);
   cursor: pointer;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
@@ -394,12 +392,12 @@ nav .linksList li .navLink.active {
   align-items: center;
   height: 25px;
   aspect-ratio: 1/1;
-  background-color: rgba(255, 69, 0, 0.2);
+  background-color: rgba(45, 60, 37, 0.2);
   border: transparent;
   border-radius: 100%;
 }
 .cart .productoCarrito .cartProductInfo .cartActionsRow .cartProductActions .cartProductActionButton .actionIcon {
-  fill: orangered;
+  fill: rgb(45, 60, 37);
 }
 .cart .productoCarrito .cartProductInfo .cartActionsRow .cartProductActions .cartProductActionButton .actionIcon {
   fill: orangered;
@@ -428,7 +426,7 @@ nav .linksList li .navLink.active {
 }
 .cart .goToCheckout .goToCheckoutButton {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -548,12 +546,12 @@ nav .linksList li .navLink.active {
   align-items: center;
   height: 25px;
   aspect-ratio: 1/1;
-  background-color: rgba(255, 69, 0, 0.2);
+  background-color: rgba(45, 60, 37, 0.2);
   border: transparent;
   border-radius: 100%;
 }
 .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductActions .checkoutProductActionButton .actionIcon {
-  fill: orangered;
+  fill: rgb(45, 60, 37);
 }
 .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow .checkoutProductActions .checkoutProductActionButton .actionIcon {
   fill: orangered;
@@ -571,14 +569,14 @@ nav .linksList li .navLink.active {
   width: clamp(300px, 30vw, 400px);
 }
 .checkout .checkoutProcedure .checkoutForm .formLabel {
-  color: orangered;
+  color: rgb(45, 60, 37);
   font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
   font-size: 18px;
 }
 .checkout .checkoutProcedure .checkoutForm .sendFormButton {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -604,7 +602,7 @@ nav .linksList li .navLink.active {
   opacity: 0.6;
   width: 100vw;
   mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, white, trasparent);
+  -webkit-mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
 }
 .landing .landingLogo {
   width: 20vw;
@@ -673,6 +671,67 @@ nav .linksList li .navLink.active {
   z-index: -11;
 }
 
+.contactPage {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  min-height: 80svh;
+}
+.contactPage .fondoContacto {
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  opacity: 0.4;
+  width: 100vw;
+  mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
+}
+.contactPage .contactTitle {
+  text-transform: uppercase;
+  font-size: 72px;
+  font-weight: 300;
+}
+.contactPage .seccionContacto {
+  display: grid;
+  min-width: 800px;
+  grid-template-columns: 400px 1fr;
+  align-items: center;
+  grid-template-rows: 100%;
+}
+.contactPage .seccionContacto .formularioContacto {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(6, 89, 1, 0.4);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.3));
+  gap: 10px;
+  z-index: 2;
+}
+.contactPage .seccionContacto .formularioContacto input, .contactPage .seccionContacto .formularioContacto textarea {
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+}
+.contactPage .seccionContacto .formularioContacto button {
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+}
+.contactPage .seccionContacto .map {
+  min-width: 600px;
+  min-height: 300px;
+  border-radius: 10px;
+  z-index: 1;
+  transform: translate(-10px, 0px);
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .landing {
   display: flex;
   justify-content: center;
@@ -709,7 +768,7 @@ nav .linksList li .navLink.active {
   width: 80vw;
 }
 .espacioProductos .producto {
-  background-color: rgba(255, 69, 0, 0.1882352941);
+  background-color: rgba(118, 160, 95, 0.7);
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -738,6 +797,8 @@ nav .linksList li .navLink.active {
 .espacioProductos .producto .productPrice {
   margin: 0rem 0 10px 2rem;
   font-size: 16px;
+  color: rgb(45, 60, 37);
+  font-weight: 800;
 }
 .espacioProductos .producto .productPrice .currency {
   margin-left: 5px;
@@ -761,7 +822,7 @@ nav .linksList li .navLink.active {
 }
 .espacioProductos .producto .productInfo .irDetalle {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -771,12 +832,12 @@ nav .linksList li .navLink.active {
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   background-color: white;
-  color: orangered;
-  border-color: orangered;
+  color: rgb(45, 60, 37);
+  border-color: rgb(45, 60, 37);
 }
 .espacioProductos .producto .productInfo .buyButton {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -796,12 +857,12 @@ nav .linksList li .navLink.active {
   align-items: center;
   height: 25px;
   aspect-ratio: 1/1;
-  background-color: rgba(255, 69, 0, 0.2);
+  background-color: rgba(45, 60, 37, 0.2);
   border: transparent;
   border-radius: 100%;
 }
 .espacioProductos .producto .productInfo .productAddButton .actionIcon, .espacioProductos .producto .productInfo .productRemoveButton .actionIcon {
-  fill: orangered;
+  fill: rgb(45, 60, 37);
 }
 .espacioProductos .producto .productInfo .quantityDiv {
   display: flex;
@@ -858,7 +919,7 @@ nav .linksList li .navLink.active {
 }
 .productAlignContainer .productCardContainer .buttonVolver {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -914,7 +975,7 @@ nav .linksList li .navLink.active {
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addToCartSection .buyButton {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -924,13 +985,13 @@ nav .linksList li .navLink.active {
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   width: 200px;
-  border: solid 1px orangered;
-  background-color: rgba(255, 69, 0, 0.9);
+  border: solid 1px rgb(45, 60, 37);
+  background-color: rgba(118, 160, 95, 0.7);
   font-size: 14px;
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addToCartSection .addedToCart {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -940,8 +1001,8 @@ nav .linksList li .navLink.active {
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   width: 200px;
-  border: solid 1px orangered;
-  background-color: rgba(255, 69, 0, 0.9);
+  border: solid 1px rgb(45, 60, 37);
+  background-color: rgba(118, 160, 95, 0.7);
   font-size: 14px;
   flex-direction: row;
   justify-content: center;
@@ -969,16 +1030,16 @@ nav .linksList li .navLink.active {
   align-items: center;
   height: 25px;
   aspect-ratio: 1/1;
-  background-color: rgba(255, 69, 0, 0.2);
+  background-color: rgba(45, 60, 37, 0.2);
   border: transparent;
   border-radius: 100%;
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .actionButton .actionIcon {
-  fill: orangered;
+  fill: rgb(45, 60, 37);
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .buyButton {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -988,13 +1049,13 @@ nav .linksList li .navLink.active {
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   width: 200px;
-  border: solid 1px orangered;
-  background-color: rgba(255, 69, 0, 0.9);
+  border: solid 1px rgb(45, 60, 37);
+  background-color: rgba(118, 160, 95, 0.7);
   font-size: 14px;
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .addedToCart {
   width: 100px;
-  background-color: rgba(255, 68, 0, 0.9);
+  background-color: rgb(45, 60, 37);
   padding: 0.5rem;
   text-decoration: none;
   color: white;
@@ -1004,8 +1065,8 @@ nav .linksList li .navLink.active {
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
   width: 200px;
-  border: solid 1px orangered;
-  background-color: rgba(255, 69, 0, 0.9);
+  border: solid 1px rgb(45, 60, 37);
+  background-color: rgba(118, 160, 95, 0.7);
   font-size: 14px;
   flex-direction: row;
   justify-content: center;

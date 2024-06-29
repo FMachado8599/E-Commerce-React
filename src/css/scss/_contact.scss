@@ -1,0 +1,61 @@
+.contactPage{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 80svh;
+    & .fondoContacto{
+        position: absolute;
+        top: 0;
+        z-index: -10;
+        opacity: .4;
+        width: 100vw;
+        mask-image: linear-gradient(to bottom,white 80%,transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom,white 80%,transparent 100%);
+    }
+    & .contactTitle{
+        text-transform: uppercase;
+        font-size: 72px;
+        font-weight: 300;
+    }
+    & .seccionContacto{
+        display: grid;
+        min-width: 800px;
+        grid-template-columns: 400px 1fr;
+        align-items: center;
+        grid-template-rows: 100%;
+
+        & .formularioContacto{
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: $lime-a7;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, .3));
+            gap: 10px;
+            z-index: 2;
+            & input,textarea{
+                border-radius: 7px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                padding:0.5rem;
+            }
+            & button{
+                border-radius: 7px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                padding:0.5rem;
+            }
+        }
+        & .map{
+            min-width: 600px;
+            min-height: 300px;
+            border-radius: 10px;
+            z-index: 1;
+            transform: translate(-10px, 0px);
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/config';
 
@@ -26,15 +26,13 @@ const DataProvider = ({ children }) => {
         })
       )
     })
-  }, [])
+  }, [productos])
   
-
-
-// const [count, setCount] = useState(0);
-//   useEffect(() => {
-//     setProductos(productosData);
-//     setCategorias(categoriasData);
-//   }, [count]);
+  // const [count, setCount] = useState(0);
+  //   useEffect(() => {
+  //     setProductos(productosData);
+  //     setCategorias(categoriasData);
+  //   }, [count]);
 
   const showToast = (message) => {
     setShow(true);

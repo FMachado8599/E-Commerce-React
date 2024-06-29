@@ -1,5 +1,3 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
 import { DataContext } from '../DataContext';
 import { useContext } from 'react';
 

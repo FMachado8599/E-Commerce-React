@@ -1,4 +1,3 @@
-import React from 'react'
 import CategoryNav from './CategoryNav'
 import { ItemListContainer } from './ItemListContainer'
 import { useState } from 'react'

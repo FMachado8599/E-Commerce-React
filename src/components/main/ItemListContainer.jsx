@@ -1,6 +1,8 @@
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { DataContext, CartContext, ToastContext } from '../DataContext';
+import menos from '../../multimedia/icons/menos.svg'
+import mas from '../../multimedia/icons/mas.svg'
 
 
 export const ItemListContainer = ({ selectedCategory }) => {
@@ -83,15 +85,11 @@ export const ItemListContainer = ({ selectedCategory }) => {
             <div className='productInfo'>
               <div className='quantityDiv'>
                 <button className="productRemoveButton" onClick={() => handleRemoveFromCart(producto)} >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-dash actionIcon" viewBox="0 0 16 16">
-                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
-                  </svg>
+                  <img className='actionIcon' src={menos} alt="Simbolo de menos" />
                 </button>
                 <p className='addedQuantity'>{producto.quantity??1}</p>
                 <button className="productAddButton" onClick={() => handleAddToCart(producto)} >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-plus actionIcon" viewBox="0 0 16 16">
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                  </svg>
+                  <img className='actionIcon' src={mas} alt="Simbolo de mas" />
                 </button>
               </div>
               <button onClick={() => handleAddToCart(producto)} className='buyButton'>AGREGAR AL HORNO</button>

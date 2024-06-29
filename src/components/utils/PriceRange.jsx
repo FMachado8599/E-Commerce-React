@@ -1,5 +1,3 @@
-import React from 'react';
-
 const PriceRange = ({ min, max, step, minValue, maxValue, onMinChange, onMaxChange }) => {
   return (
     <div className="price-range">

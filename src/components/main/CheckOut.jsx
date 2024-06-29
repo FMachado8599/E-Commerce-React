@@ -1,10 +1,11 @@
-import React from 'react'
 import { useContext, useState, useEffect } from 'react';
 import { CartContext } from '../DataContext';
 import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
 import { db } from "../../firebase/config"
 import { collection, addDoc, getDocs} from "firebase/firestore"
+import menos from '../../multimedia/icons/menos.svg'
+import mas from '../../multimedia/icons/mas.svg'
 
 const CheckOut = () => {
     const { cart, addToCart, removeFromCart, deleteFromCart, precioTotal, clearCart } = useContext(CartContext);
@@ -96,15 +97,11 @@ const CheckOut = () => {
                     <h3 className='checkoutProductPrice'>{producto.precio}<span className='currency'>USD</span></h3>
                     <div className='checkoutProductActions'>
                         <button className="checkoutProductActionButton" onClick={() => removeFromCart(producto)} >
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-dash actionIcon" viewBox="0 0 16 16">
-                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
-                          </svg>
+                          <img className='actionIcon' src={menos} alt="Simbolo de menos" />
                         </button>
                         <p>{producto.quantity}</p>
                         <button className="checkoutProductActionButton" onClick={() => addToCart(producto)} >
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-plus actionIcon" viewBox="0 0 16 16">
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                          </svg>
+                          <img className='actionIcon' src={mas} alt="Simbolo de mas" />
                         </button>
                     </div>
                   </div>

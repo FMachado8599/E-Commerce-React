@@ -1,8 +1,7 @@
-import React from 'react'
 import Navbar from './Navbar'
 import { CartWidget } from './CartWidget'
 import logo from "../../multimedia/icons/croissant.svg"
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import OffcanvasHeader from 'react-bootstrap/OffcanvasHeader'
 import OffcanvasTitle from 'react-bootstrap/OffcanvasTitle'

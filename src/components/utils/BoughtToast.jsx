@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ToastContainer, Toast } from 'react-bootstrap';
-import { ToastContext, DataContext } from '../DataContext';
+import { ToastContext } from '../DataContext';
 import  toastIco from '../../multimedia/icons/oven.png';
 
 const BoughtToast = () => {
