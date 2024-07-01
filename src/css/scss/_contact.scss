@@ -37,15 +37,23 @@
             filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, .3));
             gap: 10px;
             z-index: 2;
+            & label{
+                color: $lime-a1210;
+                font-weight: 700;
+                font-family: $font-titulo;
+            }
             & input,textarea{
                 border-radius: 7px;
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 padding:0.5rem;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 10px -5px, rgba(0, 0, 0, 0.3) 0px 5px 10px -8px;
             }
             & button{
+                font-family: $font-titulo;
                 border-radius: 7px;
                 border: 1px solid rgba(255, 255, 255, 0.2);
                 padding:0.5rem;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             }
         }
         & .map{

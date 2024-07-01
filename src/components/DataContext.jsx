@@ -26,8 +26,20 @@ const DataProvider = ({ children }) => {
         })
       )
     })
-  }, [productos])
-  
+  }, [])
+
+  // useEffect(() =>{
+  //   const categoryRef = collection(db,"categorias")
+
+  //   getDocs(categoryRef)
+  //     .then((respuesta) => {
+  //       setCategorias(
+  //         respuesta.docs.map((doc) => {
+  //           return {...doc.data(), id: doc.id}
+  //         })
+  //       )
+  //     })
+  // }, [])
   // const [count, setCount] = useState(0);
   //   useEffect(() => {
   //     setProductos(productosData);

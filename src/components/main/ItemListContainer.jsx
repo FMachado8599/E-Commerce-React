@@ -40,37 +40,42 @@ export const ItemListContainer = ({ selectedCategory }) => {
       <h1 className='tituloItemListContainer'>Productos</h1>
 
       <div className="filter">
-        <label>
-          Min Price:
-          <input
-            type="range"
-            min="0.0"
-            max={maxProductPrice}
-            step="0.1"
-            value={minPrice}
-            onChange={e => {
-              const value = parseFloat(e.target.value);
-              if (value <= maxPrice) setMinPrice(value);
-            }}
-          />
-        </label>
-        <label>
-          Max Price:
-          <input
-            type="range"
-            min="0.0"
-            max={maxProductPrice}
-            step="0.1"
-            value={maxPrice}
-            onChange={e => {
-              const value = parseFloat(e.target.value);
-              if (value >= minPrice) setMaxPrice(value);
-            }}
-          />
-        </label>
-        <div>
-          <span>Min: ${minPrice.toFixed(2)}</span>
-          <span>Max: ${maxPrice.toFixed(2)}</span>
+        <div className='filterNodes'>
+          <label className='priceLabel'>
+            Minimo:
+            <input
+              className='priceInput'
+              type="range"
+              min="0.0"
+              max={maxProductPrice}
+              step="0.1"
+              value={minPrice}
+              onChange={e => {
+                const value = parseFloat(e.target.value);
+                if (value <= maxPrice) setMinPrice(value);
+              }}
+            />
+          </label>
+          <label className='priceLabel'>
+            Maximo:
+            <input
+              className='priceInput'
+              type="range"
+              min="0.0"
+              max={maxProductPrice}
+              step="0.1"
+              value={maxPrice}
+              onChange={e => {
+                const value = parseFloat(e.target.value);
+                if (value >= minPrice) setMaxPrice(value);
+              }}
+            />
+          </label>
+        </div>
+        <div className='rangeLabel'>
+          <span>USD {minPrice.toFixed(1)}</span>
+          <p> - </p>
+          <span>USD {maxPrice.toFixed(1)}</span>
         </div>
       </div>
 
