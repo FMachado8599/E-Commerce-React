@@ -1,9 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 
 const Navbar = () => {
 
-  const [ selectedCategory, setSelectedCategory ] = useState("")
   return (
     <nav>
         <ul className='linksList'>

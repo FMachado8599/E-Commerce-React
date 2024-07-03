@@ -1,17 +1,36 @@
+import { useContext, useEffect } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from "../../firebase/config"
 import { DataContext } from '../DataContext';
-import { useContext } from 'react';
 
 const CategoryNav = ({ selectedCategory, setSelectedCategory }) => {
-    const { categorias } = useContext(DataContext);
+
+  const { categoryList, setCategoryList } = useContext(DataContext);
+
+    useEffect(() => {
+        const categoryRef = collection(db, "categoria");
+    
+    
+        getDocs(categoryRef).
+          then((respuesta) => {
+            setCategoryList(
+              respuesta.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id,
+              }))
+            );
+        });
+      }, []);
+
   return (
     <nav className='categoryNav'>
         <ul className='categoryList'>
             {
-                categorias.map((category) =>{
+                categoryList.map((category) =>{
                     return (
                         
                         <li key={category.id}
-                        onClick={() => setSelectedCategory(category.id === selectedCategory ? "" : category.id)}
+                        onClick={() =>  setSelectedCategory(category.id === selectedCategory ? "" : category.id)}
                         className={selectedCategory === category.id ? 'CategoryItemSelected' : 'categoryItem'}>
                         {category.nombre}
                         </li>

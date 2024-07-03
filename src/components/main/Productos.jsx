@@ -1,12 +1,17 @@
+import { useState } from 'react'
 import CategoryNav from './CategoryNav'
 import { ItemListContainer } from './ItemListContainer'
-import { useState } from 'react'
 
 const Productos = () => {
-  const [selectedCategory, setSelectedCategory] = useState("")
+
+//----------------------------------PRODUCT FILTERS----------------------------------//  
+  const [ selectedCategory, setSelectedCategory ] = useState("")
+  // const [minPrice, setMinPrice] = useState(0.0);
+  // const [maxPrice, setMaxPrice] = useState(Infinity);
+  
   return (
     <div>
-      <CategoryNav selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+      <CategoryNav selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
       <ItemListContainer selectedCategory={selectedCategory}/>
     </div>
   )

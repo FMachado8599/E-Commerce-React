@@ -181,8 +181,10 @@ p {
   backdrop-filter: blur(5px);
   cursor: pointer;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
-  background-color: rgba(255, 69, 0, 0.8);
-  color: white;
+  background-color: rgb(173, 200, 160);
+  border: 1px solid rgb(45, 60, 37);
+  color: rgb(45, 60, 37);
+  font-weight: 800;
   scale: 1.2;
   box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.3);
   transition: 100ms ease-in;

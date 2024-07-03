@@ -17,10 +17,15 @@ const Landing = () => {
           <h2 className='chamuyoTitle'>El encanto de lo hecho en casa...</h2>
           <img className='imgChamuyo' src={imgChamuyo} alt="pan con forma redondo casero" />
           <h2 className='chamuyoTitle2'>... en productos frescos y autenticos</h2>
+          
         </div>
       </section>
+
       <section className='contactSection' ></section>
       {/* <img className='imageFooter' src={imgFooter} alt="panes prontos para la venta almacenados en bandeja" /> */}
+      <section>
+      <img className='imgChamuyo' src={imgFooter} alt="pan con forma redondo casero" />
+      </section>
     </div>
 
   )

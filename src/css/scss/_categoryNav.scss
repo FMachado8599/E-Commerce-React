@@ -27,8 +27,10 @@
         }
         & .CategoryItemSelected {
             @include category-item;
-            background-color: rgb(255, 69, 0, .8);
-            color: white;
+            background-color: $lime-6;
+            border: 1px solid $lime-12;
+            color: $lime-12;
+            font-weight: 800;
             scale: 1.2;
             box-shadow: 2px 2px 9px rgb(0, 0, 0, .3);
             transition: 100ms ease-in;

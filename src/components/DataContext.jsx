@@ -1,56 +1,55 @@
-import { createContext, useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase/config';
+import { createContext, useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
+import { query, where, collection, getDocs } from 'firebase/firestore';
+import { db } from "../firebase/config";
 
 const DataContext = createContext();
 const ToastContext = createContext();
 const CartContext = createContext();
 
 const DataProvider = ({ children }) => {
-  const [productos, setProductos] = useState([]);
-  const [categorias, setCategorias] = useState([]);
   const [show, setShow] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [cart, setCart] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState("")
 
-  useEffect(() =>{
-    const productRef = collection(db, "productos")
+//----------------------------------BACKEND DATA----------------------------------//
+const [productList, setProductList] = useState([])
+const [categoryList, setCategoryList] = useState([])
+
+useEffect(() => {
+
+  /* Datos dummy en Json */
+  // Cargar todas las categorias al contexto
+  // fetch("/src/data/categorias.json")
+  // .then(respuesta => respuesta.json())
+  // .then(jsonCategorias => {
+  //   setCategoryList(jsonCategorias);
+  // });
   
-    getDocs(productRef)
+  // // Cargar todos los productos al contexto
+  // fetch("/src/data/productos.json")
+  // .then(respuesta => respuesta.json())
+  // .then(jsonProductos => {
+  //   setProductList(jsonProductos);
+  // });
+
+  /* Traer datos de Firebase */
+  const productRef = collection(db, "productos")
+  const catQuery = selectedCategory ? query(productRef, where("categoria", "==", selectedCategory )) : productRef;
+  getDocs(catQuery)
     .then((respuesta) => {
-      
-      setProductos(
-        respuesta.docs.map((doc) => {
-          return { ...doc.data(), id: doc.id, }
-          
-        })
-      )
-    })
-  }, [])
+      setProductList(respuesta.docs.map((doc) => {return { ...doc.data(), id: doc.id, }}))
+  })
+}, [selectedCategory]);
 
-  // useEffect(() =>{
-  //   const categoryRef = collection(db,"categorias")
-
-  //   getDocs(categoryRef)
-  //     .then((respuesta) => {
-  //       setCategorias(
-  //         respuesta.docs.map((doc) => {
-  //           return {...doc.data(), id: doc.id}
-  //         })
-  //       )
-  //     })
-  // }, [])
-  // const [count, setCount] = useState(0);
-  //   useEffect(() => {
-  //     setProductos(productosData);
-  //     setCategorias(categoriasData);
-  //   }, [count]);
+//----------------------------------TOAST----------------------------------//
 
   const showToast = (message) => {
     setShow(true);
     setToastMessage(message);
   };
-  
+//----------------------------------CART----------------------------------//
   const deleteFromCart = product => {
     const newCart = cart.filter(item => item.id !== product.id);
     setCart(newCart); 
@@ -105,7 +104,7 @@ const DataProvider = ({ children }) => {
   }
 
   return (
-    <DataContext.Provider value={{ productos, categorias }}>
+    <DataContext.Provider value={{ productList, setProductList, categoryList, setCategoryList }}>
       <CartContext.Provider value={{cart, addToCart, clearCart, removeFromCart, deleteFromCart, precioTotal, cartQuantity}}>
         <ToastContext.Provider value={{ showToast, show, setShow, toastMessage }}>
           {children}
@@ -115,4 +114,8 @@ const DataProvider = ({ children }) => {
   );
 };
 
-export { DataContext, DataProvider, ToastContext, CartContext };
+DataProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export { DataProvider, DataContext, ToastContext, CartContext };
