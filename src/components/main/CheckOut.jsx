@@ -1,9 +1,9 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState} from 'react';
 import { CartContext } from '../DataContext';
 import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form";
 import { db } from "../../firebase/config"
-import { collection, addDoc, getDocs} from "firebase/firestore"
+import { collection, addDoc } from "firebase/firestore"
 import menos from '../../multimedia/icons/menos.svg'
 import mas from '../../multimedia/icons/mas.svg'
 
@@ -12,11 +12,14 @@ const CheckOut = () => {
 
     const { register, handleSubmit } = useForm();
 
-    const [pedidoId, setPedidoId] = useState("");
-
-    const [pedidoData, setPedidoData] = useState(null);
+    const [ pedidoId, setPedidoId ] = useState("");
+    const [ cliente, setCliente ] = useState({});
+    const [ cartSummary, setCartSummary ] = useState([])
 
     const send = (data) => {
+
+        setCliente(data)
+        setCartSummary(cart)
 
         const pedido = {
             cliente: data,
@@ -29,26 +32,10 @@ const CheckOut = () => {
         addDoc(pedidosRef, pedido)
         .then((doc) => {
             setPedidoId(doc.id);
-            clearCart();
+            clearCart()
         })
 
     }
-
-    useEffect(() =>{
-      const pedidoRef = collection(db, "pedido")
-    
-      getDocs(pedidoRef)
-      .then((respuesta) => {
-        
-        setPedidoData(
-          respuesta.docs.map((doc) => {
-            console.log(doc);
-            return { ...doc.data(), id: doc.id, }
-            
-          })
-        )
-      })
-    }, [])
 
   if (pedidoId) {
     return (
@@ -57,19 +44,19 @@ const CheckOut = () => {
             <p>El id de tu pedido es: {pedidoId}</p>
             <p>Nos encargaremos de guardar el id de tu pedido hasta que recibas tu compra, siempre puedes consultarlo en tu perfil, en la seccion de pedidos</p>
             <div>
-              {pedidoData && (
-                  <div>
-                      <h3>Detalles del Pedido</h3>
-                      <p>Cliente: {JSON.stringify(pedidoData.cliente)}</p>
-                      <p>Total: {pedidoData.total}</p>
-                      <h4>Productos:</h4>
-                      <ul>
-                          {pedidoData.productos.map((producto, index) => (
-                              <li key={index}>{JSON.stringify(producto)}</li>
-                          ))}
-                      </ul>
-                  </div>
-              )}
+              <div>
+                <h3>Detalles del Pedido</h3>
+                <p>Cliente: {cliente.nombre}</p>
+                <p>Total: {precioTotal()}</p>
+                <h4>Productos:</h4>
+                <ul>
+                  {cartSummary.map((producto, index) => (
+                          <li key={index}>
+                            <h3>Producto{producto.nombre}</h3>
+                          </li>
+                      ))}
+                </ul>
+              </div>
             </div>
         </div>
     )
@@ -79,36 +66,42 @@ const CheckOut = () => {
     <div className='checkout'>
         <h2 className='tituloCheckout'>Checkout</h2>
         <div className='checkoutProcedure'>
-            <div className='checkoutSummary'>
-            {cart.map((producto) => (
-              <div key={producto.id} className='productCheckout d-flex'>
-                <img className='imgProductCheckout' src={producto.img} alt={producto.nombre} />
-                <div className='checkoutProductInfo'>
-                  <div className='checkoutNameRow'>
-                    <h2 className='checkoutProductName'>{producto.nombre}</h2>
-                    <button className="deleteCartProductButton" onClick={() => deleteFromCart(producto)} >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x deleteIcon" viewBox="0 0 16 16">
-                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                    </svg>
-                    </button>
-                  </div>
-                  <p className='checkoutProductQuantity'>Cantidad: {producto.quantity}</p>
-                  <div className='checkoutActionsRow'>
-                    <h3 className='checkoutProductPrice'>{producto.precio}<span className='currency'>USD</span></h3>
-                    <div className='checkoutProductActions'>
-                        <button className="checkoutProductActionButton" onClick={() => removeFromCart(producto)} >
-                          <img className='actionIcon' src={menos} alt="Simbolo de menos" />
-                        </button>
-                        <p>{producto.quantity}</p>
-                        <button className="checkoutProductActionButton" onClick={() => addToCart(producto)} >
-                          <img className='actionIcon' src={mas} alt="Simbolo de mas" />
-                        </button>
+            <div>
+              <div className='checkoutSummary'>
+                <div>
+                {cart.map((producto) => (
+                <div key={producto.id} className='productCheckout d-flex'>
+                  <img className='imgProductCheckout' src={producto.img} alt={producto.nombre} />
+                  <div className='checkoutProductInfo'>
+                    <div className='checkoutNameRow'>
+                      <h2 className='checkoutProductName'>{producto.nombre}</h2>
+                      <button className="deleteCartProductButton" onClick={() => deleteFromCart(producto)} >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x deleteIcon" viewBox="0 0 16 16">
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+                      </button>
                     </div>
+                    <p className='checkoutProductQuantity'>Cantidad: {producto.quantity}</p>
+                    <div className='checkoutActionsRow'>
+                      <h3 className='checkoutProductPrice'>{producto.precio}<span className='currency'>USD</span></h3>
+                      <div className='checkoutProductActions'>
+                          <button className="checkoutProductActionButton" onClick={() => removeFromCart(producto)} >
+                            <img className='actionIcon' src={menos} alt="Simbolo de menos" />
+                          </button>
+                          <button className="checkoutProductActionButton" onClick={() => addToCart(producto)} >
+                            <img className='actionIcon' src={mas} alt="Simbolo de mas" />
+                          </button>
+                      </div>
+                    </div>
+          
                   </div>
-        
+                </div>
+              ))}
                 </div>
               </div>
-            ))}
+              <div className='totalOrder'>
+                <p>TOTAL: {precioTotal()} USD</p>
+              </div>
             </div>
             <form className='checkoutForm' onSubmit={handleSubmit(send)}>
                 
@@ -125,7 +118,7 @@ const CheckOut = () => {
                     <Form.Control type="phone" placeholder="Ingresa tu celular/teléfono" {...register("telefono")} />
                 </Form.Group>
 
-                <button className='sendFormButton' onClick={clearCart} type='send'>Comprar</button>
+                <button className='sendFormButton' type='send'>Comprar</button>
             </form>
         </div>
 

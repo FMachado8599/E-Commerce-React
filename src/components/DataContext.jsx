@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import { query, where, collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { db } from "../firebase/config";
 
 const DataContext = createContext();
@@ -11,7 +11,6 @@ const DataProvider = ({ children }) => {
   const [show, setShow] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [cart, setCart] = useState([])
-  const [selectedCategory, setSelectedCategory] = useState("")
 
 //----------------------------------BACKEND DATA----------------------------------//
 const [productList, setProductList] = useState([])
@@ -36,12 +35,12 @@ useEffect(() => {
 
   /* Traer datos de Firebase */
   const productRef = collection(db, "productos")
-  const catQuery = selectedCategory ? query(productRef, where("categoria", "==", selectedCategory )) : productRef;
-  getDocs(catQuery)
+
+  getDocs(productRef)
     .then((respuesta) => {
       setProductList(respuesta.docs.map((doc) => {return { ...doc.data(), id: doc.id, }}))
   })
-}, [selectedCategory]);
+}, []);
 
 //----------------------------------TOAST----------------------------------//
 

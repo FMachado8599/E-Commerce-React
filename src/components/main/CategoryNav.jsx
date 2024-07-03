@@ -20,7 +20,7 @@ const CategoryNav = ({ selectedCategory, setSelectedCategory }) => {
               }))
             );
         });
-      }, []);
+      }, [setCategoryList]);
 
   return (
     <nav className='categoryNav'>

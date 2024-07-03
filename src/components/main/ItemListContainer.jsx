@@ -9,8 +9,6 @@ export const ItemListContainer = ({selectedCategory = "" }) => {
   const { addToCart, removeFromCart } = useContext(CartContext);
   const { showToast } = useContext(ToastContext);
 
-  console.log(selectedCategory)
-
   useEffect(() =>{
 
 
