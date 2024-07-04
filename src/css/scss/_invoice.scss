@@ -1,0 +1,136 @@
+.invoice{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    & .mainPedidoInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        gap: 20px;
+        & span{
+            font-weight: 700;
+        }
+        & .orderConfirmation{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            background-color: $lime-3;
+            padding: 2rem;
+            border-radius: 1rem;
+            & .confirmationTick{
+                fill:$lime-11;
+                height: 30px;
+            }
+        }
+        & .textConfirmationEmail{
+            max-width: 1000px;
+            text-align: center;
+        }
+    }
+    & .summaryPedido{
+        background-color: $lime-1;
+        padding: 2rem;
+        width: 60%;
+        max-width: 1000px;
+        & .detallesTecnicos{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid $lime-4;
+            padding-bottom: 2rem;
+            & .detallesSeparacion{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                & h3{
+                    padding-right: 1rem;
+                    color: $lime-12;
+                    font-weight: 700;
+                }
+                & .detalleIdPedido{
+                    border-left: 2px solid $lime-6;
+                    padding-left: 2rem;
+                    font-family: $font-p;
+                    font-weight: 400;
+                }
+            }
+            & .date{
+                font-weight: 600;
+                font-family: $font-p;
+                color: $lime-a11;
+            }
+        }
+        & .detallesPedido{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: start;
+            min-height: 150px;
+            padding: 2rem 0;
+            & div{
+                & .titleDatos{
+                    padding-bottom: 1rem;
+                    color: $lime-12;
+                }
+            }
+            & p{
+                padding: 5px 0;
+                & span{
+                    color: $lime-12;
+                    font-weight: 600;
+                }
+            }
+        }
+        & .itemsSummary{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            background-color: $lime-3;
+            border-radius: 1rem;
+            padding: 1rem;
+            gap: 20px;
+            & .summaryProductInfo{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+                justify-content: space-between;
+                & p{
+                    font-weight: 400;
+                }
+                & .summaryProductImg{
+                    width: 100px;
+                    border-radius: 0.5rem;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                }
+                & .summaryProductName{
+                    color: $lime-12;
+                    font-size: 24px;
+                }
+            }
+        }
+        & .totalOrden{
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: end;
+            padding-right: 1rem;
+            gap: 5px;
+            & p{
+                font-weight: 400;
+                & span{
+                    font-weight: 600;
+                }
+            }
+
+        }
+    }
+}

@@ -475,6 +475,140 @@ nav .linksList li .navLink.active {
   padding-inline: 1rem;
 }
 
+.invoice {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.invoice .mainPedidoInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 20px;
+}
+.invoice .mainPedidoInfo span {
+  font-weight: 700;
+}
+.invoice .mainPedidoInfo .orderConfirmation {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  background-color: rgb(221, 231, 216);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.invoice .mainPedidoInfo .orderConfirmation .confirmationTick {
+  fill: rgb(67, 104, 45);
+  height: 30px;
+}
+.invoice .mainPedidoInfo .textConfirmationEmail {
+  max-width: 1000px;
+  text-align: center;
+}
+.invoice .summaryPedido {
+  background-color: rgb(239, 240, 238);
+  padding: 2rem;
+  width: 60%;
+  max-width: 1000px;
+}
+.invoice .summaryPedido .detallesTecnicos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(207, 223, 199);
+  padding-bottom: 2rem;
+}
+.invoice .summaryPedido .detallesTecnicos .detallesSeparacion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.invoice .summaryPedido .detallesTecnicos .detallesSeparacion h3 {
+  padding-right: 1rem;
+  color: rgb(45, 60, 37);
+  font-weight: 700;
+}
+.invoice .summaryPedido .detallesTecnicos .detallesSeparacion .detalleIdPedido {
+  border-left: 2px solid rgb(173, 200, 160);
+  padding-left: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.invoice .summaryPedido .detallesTecnicos .date {
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color: rgba(21, 68, 0, 0.8);
+}
+.invoice .summaryPedido .detallesPedido {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 150px;
+  padding: 2rem 0;
+}
+.invoice .summaryPedido .detallesPedido div .titleDatos {
+  padding-bottom: 1rem;
+  color: rgb(45, 60, 37);
+}
+.invoice .summaryPedido .detallesPedido p {
+  padding: 5px 0;
+}
+.invoice .summaryPedido .detallesPedido p span {
+  color: rgb(45, 60, 37);
+  font-weight: 600;
+}
+.invoice .summaryPedido .itemsSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background-color: rgb(221, 231, 216);
+  border-radius: 1rem;
+  padding: 1rem;
+  gap: 20px;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo p {
+  font-weight: 400;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductImg {
+  width: 100px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductName {
+  color: rgb(45, 60, 37);
+  font-size: 24px;
+}
+.invoice .summaryPedido .totalOrden {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  padding-right: 1rem;
+  gap: 5px;
+}
+.invoice .summaryPedido .totalOrden p {
+  font-weight: 400;
+}
+.invoice .summaryPedido .totalOrden p span {
+  font-weight: 600;
+}
+
 .checkout {
   margin-top: 2rem;
   display: flex;

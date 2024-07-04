@@ -15,16 +15,22 @@ const CheckOut = () => {
     const [ pedidoId, setPedidoId ] = useState("");
     const [ cliente, setCliente ] = useState({});
     const [ cartSummary, setCartSummary ] = useState([])
+    const [ priceSummary, setPriceSummary ] = useState([])
+    const [ orderDateSummary, setOrderDateSummary] = useState()
 
     const send = (data) => {
 
-        setCliente(data)
-        setCartSummary(cart)
+        setCliente(data);
+        setCartSummary(cart);
+        setPriceSummary(precioTotal());
+        const orderDate = new Date().toLocaleDateString('es-ES');
+        setOrderDateSummary(orderDate);
 
         const pedido = {
             cliente: data,
             productos: cart,
-            total: precioTotal()
+            total: precioTotal(),
+            fecha: orderDate
         }
 
         const pedidosRef = collection(db, "pedidos");
@@ -38,26 +44,65 @@ const CheckOut = () => {
     }
 
   if (pedidoId) {
+    
     return (
-        <div className="Invoice">
+        <div className="invoice">
+          <div className='mainPedidoInfo'>
             <h1 className="main-title">Muchas gracias por tu compra!</h1>
-            <p>El id de tu pedido es: {pedidoId}</p>
-            <p>Nos encargaremos de guardar el id de tu pedido hasta que recibas tu compra, siempre puedes consultarlo en tu perfil, en la seccion de pedidos</p>
-            <div>
-              <div>
-                <h3>Detalles del Pedido</h3>
-                <p>Cliente: {cliente.nombre}</p>
-                <p>Total: {precioTotal()}</p>
-                <h4>Productos:</h4>
-                <ul>
-                  {cartSummary.map((producto, index) => (
-                          <li key={index}>
-                            <h3>Producto{producto.nombre}</h3>
-                          </li>
-                      ))}
-                </ul>
-              </div>
+            <div className='orderConfirmation'>
+              <svg xmlns="http://www.w3.org/2000/svg" class="confirmationTick" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </svg>
+              <p>Tu orden <span>#{pedidoId}</span> esta siendo procesada</p>
             </div>
+            
+            <p className='textConfirmationEmail'>Te hemos enviado un email a <span>{cliente.email}</span> con tu confirmacion de pedido y el recibo. Si el email no llega en el correr de los proximos 2 minutos, por favor revise su carpeta de spam para ver si el email fue redirigido hacia ahi</p>
+          </div>
+          <div className='summaryPedido'>
+              <div className='detallesTecnicos'>
+                <div className='detallesSeparacion'>
+                  <h3>Detalles del Pedido</h3>
+                  <p className='detalleIdPedido'>#{pedidoId}</p>
+                </div>
+
+                <p className='date'>{orderDateSummary}</p>
+              </div>
+              <div className='detallesPedido'>
+                <div className='datosCliente'>
+                  <h3 className='titleDatos'>Datos de cliente</h3>
+                  <p><span>Nombre: </span>{cliente.nombre}</p>
+                  <p><span>Email: </span>{cliente.email}</p>
+                  <p><span>Telefono/Celular: </span>{cliente.telefono}</p>
+                </div>
+                <div>
+                  <h3 className='titleDatos'>Total: {priceSummary} USD</h3>
+                </div>
+                <div className='datosEmpresa'>
+                  <h3 className='titleDatos'>Doux SAS</h3>
+                  <p><span>RUT: </span>218784970020</p>
+                  <p><span>Telefono: </span>2345 9876</p>
+                  <p><span>Celular: </span>+598 95 872 982</p>
+                  <p><span>Email: </span>ventas@doux.com.uy</p>
+                </div>
+              </div>
+              <h4>Productos:</h4>
+              <ul className='itemsSummary'>
+                {cartSummary.map((producto, index) => (
+                        <li key={index} className='summaryProductInfo'>
+                            <img src={producto.thumbnail} alt="" className='summaryProductImg' />
+                            <h3 className='summaryProductName'>{producto.nombre}</h3>
+                            <p className='summaryProductQuantity'>x{producto.quantity}u</p>
+                            <p className='summaryProductPrice'>{producto.precio}<span className='currency'> USD</span></p>
+                            <p className='summaryProductPrice'>Total: {producto.precio*producto.quantity} USD</p>
+                        </li>
+                    ))}
+              </ul>
+              <div className='totalOrden'>
+                <p><span>Sub total: </span>{priceSummary-(priceSummary*0.22).toFixed(2)}</p>
+                <p><span>IVA: </span> {(priceSummary*0.22).toFixed(2)}</p>
+                <p><span>Total: </span>{priceSummary}</p>
+              </div>
+          </div>
         </div>
     )
   }
