@@ -60,9 +60,10 @@
                     display: flex;
                     justify-content: end;
                     flex-direction: row;
-                    align-items: end;
+                    align-items: center;
                     gap: 10px;
                     & p{
+                        vertical-align: middle;
                         padding: 0;
                         margin: 0;
                     }

@@ -113,40 +113,46 @@ const CheckOut = () => {
         <div className='checkoutProcedure'>
             <div>
               <div className='checkoutSummary'>
-                <div>
-                {cart.map((producto) => (
-                <div key={producto.id} className='productCheckout d-flex'>
-                  <img className='imgProductCheckout' src={producto.img} alt={producto.nombre} />
-                  <div className='checkoutProductInfo'>
-                    <div className='checkoutNameRow'>
-                      <h2 className='checkoutProductName'>{producto.nombre}</h2>
-                      <button className="deleteCartProductButton" onClick={() => deleteFromCart(producto)} >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x deleteIcon" viewBox="0 0 16 16">
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                      </svg>
-                      </button>
-                    </div>
-                    <p className='checkoutProductQuantity'>Cantidad: {producto.quantity}</p>
-                    <div className='checkoutActionsRow'>
-                      <h3 className='checkoutProductPrice'>{producto.precio}<span className='currency'>USD</span></h3>
-                      <div className='checkoutProductActions'>
-                          <button className="checkoutProductActionButton" onClick={() => removeFromCart(producto)} >
-                            <img className='actionIcon' src={menos} alt="Simbolo de menos" />
+                  {cart.map((producto) => (
+                    <div key={producto.id} className='productCheckout d-flex'>
+                      <img className='imgProductCheckout' src={producto.img} alt={producto.nombre} />
+                      <div className='checkoutProductInfo'>
+                        <div className='checkoutNameRow'>
+                          <h2 className='checkoutProductName'>{producto.nombre}</h2>
+                          <button className="deleteCartProductButton" onClick={() => deleteFromCart(producto)} >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x deleteIcon" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                          </svg>
                           </button>
-                          <button className="checkoutProductActionButton" onClick={() => addToCart(producto)} >
-                            <img className='actionIcon' src={mas} alt="Simbolo de mas" />
-                          </button>
+                        </div>
+                        <p className='checkoutProductQuantity'>Cantidad: {producto.quantity}</p>
+                        <div className='checkoutActionsRow'>
+                          <h3 className='checkoutProductPrice'>{producto.precio}<span className='currency'>USD</span></h3>
+                          <div className='checkoutProductActions'>
+                              <button className="checkoutProductActionButton" onClick={() => removeFromCart(producto)} >
+                                <img className='actionIcon' src={menos} alt="Simbolo de menos" />
+                              </button>
+                              <button className="checkoutProductActionButton" onClick={() => addToCart(producto)} >
+                                <img className='actionIcon' src={mas} alt="Simbolo de mas" />
+                              </button>
+                          </div>
+                        </div>
+              
                       </div>
                     </div>
-          
-                  </div>
-                </div>
-              ))}
-                </div>
+                  ))}
+                  {precioTotal=== 0 ? 
+                  <p className='totalOrder'>TOTAL: {precioTotal()} USD</p>
+                  :<div className='emptyOrderContainer'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                    <p className='totalOrderEmpty'>carrito vacio</p>
+                  </div> 
+                  } 
+
               </div>
-              <div className='totalOrder'>
-                <p>TOTAL: {precioTotal()} USD</p>
-              </div>
+
             </div>
             <form className='checkoutForm' onSubmit={handleSubmit(send)}>
                 

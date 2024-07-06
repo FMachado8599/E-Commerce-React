@@ -33,14 +33,14 @@
     }
     & .producto{
 
-        background-color: $lime-87;
+        background-color: $lime-2;
         border-radius: 10px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: start;
-        border: 2px solid rgba(255, 255, 255,.2);
+        border: 1px solid rgba(255, 255, 255,.2);
         backdrop-filter: blur(5px);
         box-shadow: 5px 5px 15px rgb(0, 0, 0, .25);
         width: 350px;

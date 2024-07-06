@@ -22,7 +22,7 @@
             border: 2px solid rgba(255,255,255,.18);
             border-radius: 17px;
             padding: 10px;
-            background-color: rgb(255, 68, 0,.5);
+            background-color: $lime-1;
             backdrop-filter: blur(5px);
             & .productCheckout{
                 flex-direction: row;
@@ -57,15 +57,17 @@
                         & .deleteCartProductButton{
                             background-color: transparent;
                             border: none;
+                            padding: 0;
                             & .deleteIcon{
                                 width: 25px;
                                 height: 25px;
-                                background-color: rgb(255, 68, 0,.2);
+                                background-color: $lime-5;
                                 border-radius: 50%;
                                 & path{
-                                    fill: orangered;
+                                    fill: $lime-12;
                                     width: 100%;
                                     height: 100%;
+                                    
                                 }
                             }
                         }
@@ -93,7 +95,7 @@
                             & .checkoutProductActionButton{
                                 @include action-button;
                                 & .actionIcon{
-                                    fill:orangered
+                                    fill: $lime-5;
                                 }
                             }
                         }
@@ -109,6 +111,38 @@
                     }
                 }
             }
+            & .totalOrder{
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: end;
+                font-weight: 700;
+                color: $lime-11;
+            }
+            & .emptyOrderContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 250px;
+                gap: 15px;
+                & svg{
+                    width: 50px;
+                    height: 50px;
+                    fill: $lime-8;
+                }
+                & .totalOrderEmpty{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: 700;
+                    color: $lime-11;
+                    text-transform: uppercase;
+                }
+            }
+
         }   
         & .checkoutForm{
             width: clamp(300px,30vw,400px) ;

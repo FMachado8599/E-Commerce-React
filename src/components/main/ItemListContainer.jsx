@@ -9,11 +9,7 @@ export const ItemListContainer = ({selectedCategory = ""}) => {
   const { cart, addToCart, removeFromCart } = useContext(CartContext);
   const { showToast } = useContext(ToastContext);
 
-  useEffect(() =>{
 
-
-
-  },[])
 
     // const maxProductPrice = Math.max(...productos.map(producto => parseFloat(producto.precio)));
     // setMaxPrice(maxProductPrice);
@@ -26,6 +22,7 @@ export const ItemListContainer = ({selectedCategory = ""}) => {
   const handleAddToCart = (producto) => {
     addToCart(producto);
     showToast(` ${producto.nombre} x ${producto.quantity??1}`);
+    console.log(cart.quantity)
   };
 
   const handleRemoveFromCart = (producto) => {
@@ -35,9 +32,6 @@ export const ItemListContainer = ({selectedCategory = ""}) => {
 
   const getProductQuantityInCart = (IdProducto) => {
     const productInCart = cart.find(item => item.id === IdProducto)
-    console.log(cart.find(item => item.id === IdProducto))
-    console.log(cart)
-    console.log(productInCart)
     return productInCart ? productInCart.quantity : 0;
   }
 

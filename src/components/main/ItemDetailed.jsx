@@ -75,7 +75,7 @@ const ItemDetailed = () => {
     if (loading) {
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 200);  // Espera 1 segundo
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [loading]);
