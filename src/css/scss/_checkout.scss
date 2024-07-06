@@ -4,10 +4,12 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    min-height: 80svh;
     & .tituloCheckout{
         @include titulo-section
     }
     & .checkoutProcedure{
+        margin-top: 1rem;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -111,38 +113,38 @@
                     }
                 }
             }
-            & .totalOrder{
+        }
+        & .totalOrder{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: end;
+            font-weight: 700;
+            color: $lime-11;
+        }
+        & .emptyOrderContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 250px;
+            gap: 15px;
+            & svg{
+                width: 50px;
+                height: 50px;
+                fill: $lime-8;
+            }
+            & .totalOrderEmpty{
                 display: flex;
                 flex-direction: row;
                 width: 100%;
-                justify-content: end;
+                justify-content: center;
+                align-items: center;
                 font-weight: 700;
                 color: $lime-11;
+                text-transform: uppercase;
             }
-            & .emptyOrderContainer{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 250px;
-                gap: 15px;
-                & svg{
-                    width: 50px;
-                    height: 50px;
-                    fill: $lime-8;
-                }
-                & .totalOrderEmpty{
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-                    justify-content: center;
-                    align-items: center;
-                    font-weight: 700;
-                    color: $lime-11;
-                    text-transform: uppercase;
-                }
-            }
-
         }   
         & .checkoutForm{
             width: clamp(300px,30vw,400px) ;

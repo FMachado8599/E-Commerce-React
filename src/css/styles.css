@@ -617,6 +617,7 @@ nav .linksList li .navLink.active {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  min-height: 80svh;
 }
 .checkout .tituloCheckout {
   font-size: 48px;
@@ -624,6 +625,7 @@ nav .linksList li .navLink.active {
   font-weight: 300;
 }
 .checkout .checkoutProcedure {
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -738,7 +740,8 @@ nav .linksList li .navLink.active {
   margin-left: 5px;
   font-size: 16px;
 }
-.checkout .checkoutProcedure .checkoutSummary .totalOrder {
+.checkout .checkoutProcedure .totalOrder {
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -746,7 +749,7 @@ nav .linksList li .navLink.active {
   font-weight: 700;
   color: rgb(67, 104, 45);
 }
-.checkout .checkoutProcedure .checkoutSummary .emptyOrderContainer {
+.checkout .checkoutProcedure .emptyOrderContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -754,12 +757,12 @@ nav .linksList li .navLink.active {
   height: 250px;
   gap: 15px;
 }
-.checkout .checkoutProcedure .checkoutSummary .emptyOrderContainer svg {
+.checkout .checkoutProcedure .emptyOrderContainer svg {
   width: 50px;
   height: 50px;
   fill: rgb(118, 160, 95);
 }
-.checkout .checkoutProcedure .checkoutSummary .emptyOrderContainer .totalOrderEmpty {
+.checkout .checkoutProcedure .emptyOrderContainer .totalOrderEmpty {
   display: flex;
   flex-direction: row;
   width: 100%;
