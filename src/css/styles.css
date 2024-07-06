@@ -995,6 +995,10 @@ nav .linksList li .navLink.active {
   backdrop-filter: blur(5px);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
   width: 350px;
+  transition: 200ms;
+}
+.espacioProductos .producto:hover {
+  scale: 1.01;
 }
 .espacioProductos .producto a {
   width: 100%;
@@ -1006,6 +1010,7 @@ nav .linksList li .navLink.active {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+  transition: 200ms ease-in-out;
 }
 .espacioProductos .producto a .imgProduct:hover {
   scale: 1.1;
@@ -1069,6 +1074,9 @@ nav .linksList li .navLink.active {
   border-radius: 99rem;
   width: 150px;
 }
+.espacioProductos .producto .productInfo .buyButton:hover {
+  background-color: rgb(150, 183, 133);
+}
 .espacioProductos .producto .productInfo .productAddButton, .espacioProductos .producto .productInfo .productRemoveButton {
   display: flex;
   justify-content: center;
@@ -1081,6 +1089,9 @@ nav .linksList li .navLink.active {
 }
 .espacioProductos .producto .productInfo .productAddButton .actionIcon, .espacioProductos .producto .productInfo .productRemoveButton .actionIcon {
   fill: rgb(45, 60, 37);
+}
+.espacioProductos .producto .productInfo .productAddButton:hover, .espacioProductos .producto .productInfo .productRemoveButton:hover {
+  background-color: rgb(150, 183, 133);
 }
 .espacioProductos .producto .productInfo .quantityDiv {
   display: flex;
