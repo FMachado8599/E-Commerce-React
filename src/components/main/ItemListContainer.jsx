@@ -4,9 +4,9 @@ import { CartContext, DataContext, ToastContext } from '../DataContext';
 import menos from '../../multimedia/icons/menos.svg'
 import mas from '../../multimedia/icons/mas.svg'
 
-export const ItemListContainer = ({selectedCategory = "" }) => {
+export const ItemListContainer = ({selectedCategory = ""}) => {
   const { productList } = useContext(DataContext);
-  const { addToCart, removeFromCart } = useContext(CartContext);
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
   const { showToast } = useContext(ToastContext);
 
   useEffect(() =>{
@@ -32,6 +32,14 @@ export const ItemListContainer = ({selectedCategory = "" }) => {
     removeFromCart(producto);
     showToast(` ${producto.nombre} x ${producto.quantity??1}`);
   };
+
+  const getProductQuantityInCart = (IdProducto) => {
+    const productInCart = cart.find(item => item.id === IdProducto)
+    console.log(cart.find(item => item.id === IdProducto))
+    console.log(cart)
+    console.log(productInCart)
+    return productInCart ? productInCart.quantity : 0;
+  }
 
 
   return (
@@ -94,7 +102,7 @@ export const ItemListContainer = ({selectedCategory = "" }) => {
                 <button className="productRemoveButton" onClick={() => handleRemoveFromCart(productoFiltrado)} >
                   <img className='actionIcon' src={menos} alt="Simbolo de menos" />
                 </button>
-                <p className='addedQuantity'>{productoFiltrado.quantity ?? 1}</p>
+                <p className='addedQuantity'>{getProductQuantityInCart(productoFiltrado.id)}</p>
                 <button className="productAddButton" onClick={() => handleAddToCart(productoFiltrado)} >
                   <img className='actionIcon' src={mas} alt="Simbolo de mas" />
                 </button>

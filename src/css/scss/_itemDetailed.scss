@@ -22,8 +22,7 @@
     justify-content: center;
     gap: 20px;
     & .spinner{
-        color: orangered;
-
+        color: $lime-8;
     }
 }
 
@@ -41,8 +40,8 @@
         & .buttonVolver{
             @include button-one;
             background-color: transparent;
-            border: 1px solid orangered;
-            color: orangered;
+            border: 1px solid $lime-12;
+            color: $lime-12;
             font-weight: 600;
         }
         & .productCard{
@@ -51,7 +50,7 @@
             padding: 2rem;
             max-width: 1500px;
             width: fit-content;
-            background-color: rgb(255, 69, 0,.2);
+            background-color: $lime-3;
             display: flex;
             flex-direction: row;
             gap: 2rem;
@@ -68,7 +67,7 @@
                 justify-content: center;
                 gap: 20px;
                 & .productDetailedPrice{
-                    color: orangered;
+                    color: $lime-11;
                     font-size: 2rem;
                     font-weight: 800;
                 }

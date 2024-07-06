@@ -17,7 +17,7 @@
     padding: 0.5rem;
     text-decoration: none;
     color: white;
-    border: 2px solid rgba(255,255,255,.18);
+    border: none;
     border-radius: 0.5rem;
     font-family: $font-titulo;
     text-align: center;
@@ -50,7 +50,7 @@
 @mixin buy-button{
     @include button-one;
     width: 200px;
-    border: solid 1px $lime-12;
+    // border: solid 1px $lime-12;
     background-color: $lime-87;
     font-size: 14px;
 }
