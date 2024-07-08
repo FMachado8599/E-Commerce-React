@@ -15,7 +15,7 @@ const CartProductList = ({setShowOffCanvas}) => {
         <div>
           {cart.map((producto) => (
               <div key={producto.id} className='productoCarrito d-flex'>
-                <img className='imgCartProduct' src={producto.img} alt={producto.nombre} />
+                <img className='imgCartProduct' src={producto.thumbnail} alt={producto.nombre} />
                 <div className='cartProductInfo'>
                   <div className='cartNameRow'>
                     <h2 className='cartProductName'>{producto.nombre}</h2>

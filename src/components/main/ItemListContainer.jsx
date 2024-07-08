@@ -1,8 +1,9 @@
-import { useContext, useEffect} from 'react';
+import { useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext, DataContext, ToastContext } from '../DataContext';
 import menos from '../../multimedia/icons/menos.svg'
 import mas from '../../multimedia/icons/mas.svg'
+import carrito from '../../multimedia/icons/oven.svg';
 
 export const ItemListContainer = ({selectedCategory = ""}) => {
   const { productList } = useContext(DataContext);
@@ -87,7 +88,7 @@ export const ItemListContainer = ({selectedCategory = ""}) => {
         .map( productoFiltrado => (
           <div key={productoFiltrado.id} className='producto'>
             <Link to={`/producto/${productoFiltrado.id}`}>
-              <img className='imgProduct' src={productoFiltrado.thumbnail} alt={productoFiltrado.nombre} />
+              <img className='imgProduct' src={productoFiltrado.thumbnail} alt={productoFiltrado.nombre} loading='lazy'/>
             </Link>
             <h3 className='productPrice'>{productoFiltrado.precio}<span className='currency'>USD</span></h3>
             <h2 className='productName'>{productoFiltrado.nombre}</h2>
@@ -101,7 +102,11 @@ export const ItemListContainer = ({selectedCategory = ""}) => {
                   <img className='actionIcon' src={mas} alt="Simbolo de mas" />
                 </button>
               </div>
-              <button onClick={() => handleAddToCart(productoFiltrado)} className='buyButton'>AGREGAR AL HORNO</button>
+              <div onClick={() => handleAddToCart(productoFiltrado)} className='buyButton'>
+                <img src={carrito} className='iconBuyButton'  alt="" />
+                <p>AGREGAR</p>
+              </div>
+
             </div>
           </div>
         ))}

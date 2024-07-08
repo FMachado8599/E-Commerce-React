@@ -1,9 +1,9 @@
 .landing{
     height: 100svh;
-    max-height: 1080px;
+    max-height: 900px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
     & .videoLanding{
         position: absolute;
@@ -24,6 +24,21 @@
         font-weight: 900;
         text-transform: uppercase;
         color: $lime-12;
+    }
+    & .landingPedidoLink{
+        text-decoration: none;
+        color: $gold-2;
+        background-color: $gold-a7;
+        padding: 1rem 1.5rem;
+        border-radius: .7rem;
+        border: 1px solid $gold-7;
+        font-family: $font-titulo;
+        letter-spacing: 1px;
+        font-weight: 500;
+        text-transform: uppercase;
+        &:hover{
+            scale: 1.05;
+        }
     }
 
 }
@@ -69,6 +84,186 @@
             text-align: right;
             font-weight: 600;
             font-size: 28px;
+        }
+    }
+}
+.categoriasSection{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 300px;
+    gap: 30px;
+    padding-inline: 2rem;
+    & h2{
+        font-weight: 800;
+        color: $lime-1210;
+    }
+    & .categoryCardList{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        & .categoryCard{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            transition: all 300ms;
+            border-color: $gold-1;
+            &:hover{
+                border: 1px solid $gold-1;
+                background-color: $gold-2;
+                border-radius: 1rem;
+                box-shadow: 0 5px 10px $gold-a4;
+                padding: 1rem;
+                & .category{
+                    opacity: 1;
+                    padding: 1rem 2rem;
+                }
+                & img{
+                    box-shadow: none;
+                }
+            }
+            & img{
+                width: 100%;
+                height: 200px;
+                background-color: $gold-3;
+                border-radius: .5rem;
+                object-fit: contain;
+                box-shadow: 0 5px 10px $gold-a4;
+            }
+            & .category{
+                opacity: 0;
+                z-index: 2;
+                transition: all 300ms;
+                text-transform: capitalize;
+            }
+    
+        }
+    }
+}
+.sobreNosotrosSection{
+    display: flex;
+    justify-content: center;
+    margin: 10rem 0;
+    padding: 20rem 2rem;
+    align-items: center;
+    max-height: 800px;
+    position: relative;
+    mask-image: linear-gradient(to bottom, transparent 0%, white 15%, white 85%, transparent 100%);
+
+    & .nosotrosInfo{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        max-width: 1000px;
+        background-color: $gold-27;
+        border-radius: 2rem;
+        padding: 2rem;
+        z-index: 2;
+        border: 1px solid $gold-1;
+        box-shadow: 0px 10px 20px $gold-123;
+        backdrop-filter:  sepia(100%) blur(2000px);
+        & .nosotrosTexto{
+            width: 50%;
+        }
+        & img{
+            width: 50%;
+            border-radius: 1rem;
+        }
+    }
+    & .nosotrosFondo{
+        position: absolute;
+        z-index: -2;
+        opacity: 0.3;
+        will-change: transform;
+        width: 100%;
+    }
+}
+@keyframes movingAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-500px);
+    }
+}
+
+
+.ofertaSection{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+    overflow-y: hidden;
+    & .ofertaText{
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        & h2,p{
+            color: $gold-3;
+            font-family: $font-titulo;
+        }
+        & h2 {
+            font-size: 4rem;
+            transform: scaleY(.9);
+        }
+        & p {
+            font-size: 1.5rem;
+        }
+
+    }
+    & .ofertaDividerArriba{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;               
+    & svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 199px;
+        transform: rotateY(180deg);
+    }
+    & .shape-fill {
+        fill: #F1EBD9;
+    }
+}
+    & .imgOferta{
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        z-index: -2;
+        &:hover{
+            filter: blur(2px);
+        }
+    }
+    & .ofertaDividerAbajo{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);               
+        & svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 199px;
+            transform: rotateY(180deg);
+        }
+        & .shape-fill {
+            fill: #F1EBD9;
         }
     }
 }
