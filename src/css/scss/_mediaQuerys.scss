@@ -1,0 +1,37 @@
+@media screen and (max-width: 1100px){
+    footer{
+        height: auto;
+        max-height: 800px;
+        & nav{
+            padding: 20px 0;
+            & .linksList{
+                flex-direction: column;
+                gap: 20px;
+                & li{
+                    & .navLink{
+                        &.active {
+                            font-weight: 900;
+                            font-size: 19px;
+                            text-decoration: underline transparent;
+                            text-underline-offset: 0px;
+                            color: $lime-1;
+                            text-transform: uppercase;
+                            background-color: $lime-12;
+                            box-shadow: 2px 2px 10px #00000050;
+                            padding: 10px 10px 6px 10px;
+                            border-radius: .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    div{
+        & .categoryNav{
+            & .categoryList{
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+}
