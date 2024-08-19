@@ -26,6 +26,17 @@
             }
         }
     }
+    header{
+        & .navbar{
+            & .burgerButton{
+                background-color: $lime-12;
+                border: none;
+                & .burger{
+                    background-color: black;
+                }
+            }
+        }
+    }
     div{
         & .categoryNav{
             & .categoryList{
