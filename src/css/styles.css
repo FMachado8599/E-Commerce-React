@@ -191,23 +191,23 @@ p {
   transition: 100ms ease-in;
 }
 
-nav {
+.navbar {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
-nav .linksList {
+.navbar .linksList {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 10svh;
 }
-nav .linksList li {
+.navbar .linksList li {
   list-style: none;
 }
-nav .linksList li .navLink {
+.navbar .linksList li .navLink {
   text-decoration: none;
   color: rgb(45, 60, 37);
   font-family: "Josefin Sans", sans-serif;
@@ -215,12 +215,43 @@ nav .linksList li .navLink {
   font-weight: 700;
   letter-spacing: 0.06rem;
 }
-nav .linksList li .navLink.active {
+.navbar .linksList li .navLink.active {
   font-weight: 900;
   font-size: 19px;
   text-decoration: underline 2px;
   text-underline-offset: 4px;
   color: rgb(45, 60, 37);
+  text-transform: uppercase;
+}
+
+.offcanvas-Menu {
+  background-color: rgba(45, 60, 37, 0.2);
+}
+.offcanvas-Menu .offcanvas-header .offCanvasTitle {
+  color: rgb(221, 231, 216);
+}
+.offcanvas-Menu .offcanvas-body .offCanvasNavbar .navLinkList {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 1rem;
+}
+.offcanvas-Menu .offcanvas-body .offCanvasNavbar .navLinkList li .navLink {
+  text-decoration: none;
+  color: rgb(221, 231, 216);
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+}
+.offcanvas-Menu .offcanvas-body .offCanvasNavbar .navLinkList li .navLink.active {
+  font-weight: 900;
+  font-size: 19px;
+  text-decoration: underline 2px;
+  text-underline-offset: 4px;
+  color: rgb(221, 231, 216);
   text-transform: uppercase;
 }
 
@@ -252,8 +283,8 @@ nav .linksList li .navLink.active {
   gap: 20px;
 }
 .header .logoTitle .navLink .mainLogo {
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   max-height: 100px;
   fill: rgb(45, 60, 37);
 }
@@ -262,6 +293,22 @@ nav .linksList li .navLink.active {
   text-align: center;
   vertical-align: middle;
   color: rgb(192, 213, 181);
+}
+.header .headerInteractions {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.header .headerInteractions .burgerButton {
+  background-color: rgb(45, 60, 37);
+  border: none;
+}
+
+.offcanvas-Menu .offcanvas-header {
+  background-color: black;
+}
+.offcanvas-Menu .offcanvas-body {
+  background-color: black;
 }
 
 .footer {
@@ -1576,13 +1623,6 @@ nav .linksList li .navLink.active {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3137254902);
     padding: 10px 10px 6px 10px;
     border-radius: 0.5rem;
-  }
-  header .navbar .burgerButton {
-    background-color: rgb(45, 60, 37);
-    border: none;
-  }
-  header .navbar .burgerButton .burger {
-    background-color: black;
   }
   div .categoryNav .categoryList {
     flex-direction: column;
