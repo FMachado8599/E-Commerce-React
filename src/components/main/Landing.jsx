@@ -2,16 +2,27 @@ import video from '../../multimedia/videos/bread-bakery-compressed.mp4';
 import logo from "../../multimedia/icons/croissant.svg";
 import imgOferta from "../../multimedia/panes-preparacion-filtro1.webp";
 import imgChamuyo from "../../multimedia/pan-1.webp"
+import catImg from "../../multimedia/empanadas-sin-fondo.webp";
 import { NavLink } from 'react-router-dom';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState} from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from "../../firebase/config"
 import { DataContext } from '../DataContext';
-import fondoNosotros from '../../multimedia/fondo-panes-1.webp';
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const Landing = () => {
 
   const { categoryList, setCategoryList } = useContext(DataContext);
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % categorias.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + categorias.length) % categorias.length)
+  }
 
   document.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY;
@@ -55,14 +66,17 @@ const Landing = () => {
         </div>
       </section>
       <section className='categoriasSection'>
-        <h2>Nuestra variedad de productos</h2>
+        <h2>Panadería de Alta Calidad</h2>
         <div className='categoryCardList'>
         {
           categoryList.map((category) =>{
             return (
               <div key={category.id} className='categoryCard'>
-                <img src={logo} alt="Imagen represtentativa de la categoria" />
+                <img src={catImg} alt="Imagen represtentativa de la categoria" />
+                <h4 className='categoryCardPrice'><span>Desde</span>$450</h4>
                 <h3  className='category'>{category.nombre}</h3>
+                <p className='categoryCardDescription'> "Crujientes por fuera, suaves por dentro, nuestros croissants son un deleite para los sentidos."</p>
+                <button className='categoryCardButton'>Agregar al pedido</button>
               </div>
             )
           })
@@ -71,36 +85,17 @@ const Landing = () => {
       </section>
       <section className='sobreNosotrosSection'>
         <div className='nosotrosInfo'>
-          <div className='nosotrosTexto'>
-            <h2>Hola</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic suscipit modi eveniet dolor fuga quas minus totam tenetur error reprehenderit.</p>
-          </div>
           <img src={imgOferta} alt="un pan muy apetitoso" />
-        </div>
-        <img src={fondoNosotros} className='nosotrosFondo' alt="fondo de la seccion donde se ven unos panes" />
-      </section>
-      <section className='ofertaSection'>
-        <div className='ofertaText'>
-          <h2>Con amor y calidad</h2>
-          <p>desde 2024</p>
-        </div>
-        <div class="ofertaDividerArriba">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-            </svg>
-        </div>
-        <img className='imgOferta' src={imgOferta} alt="pan con forma redondo casero" />
-        <div class="ofertaDividerAbajo">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-            </svg>
+          <div className='nosotrosTexto'>
+            <h2>Nuestra Historia</h2>
+            <p>Doux nació del amor por la panadería francesa y el deseo de compartir el auténtico sabor artesanal con nuestra comunidad. Cada día, nuestro equipo de panaderos apasionados se dedica a elaborar productos frescos, utilizando técnicas tradicionales y los mejores ingredientes. Desde los clásicos croissants hasta nuestras especialidades más innovadoras, en Doux cada bocado es una experiencia única.</p>
+            <button className='nosotrosMoreInfoButton'>Conoce Más Sobre Doux</button>
+          </div>
         </div>
       </section>
-
       <section className='contactSection' ></section>
       {/* <img className='imageFooter' src={imgFooter} alt="panes prontos para la venta almacenados en bandeja" /> */}
       <section>
-
       </section>
     </main>
 

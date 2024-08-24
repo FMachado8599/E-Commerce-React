@@ -1,12 +1,21 @@
 
 .offcanvas-Menu{
-    background-color: $lime-122;
+    border: 1px solid $lime-12;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
     & .offcanvas-header{
+        background-color: rgb(from $lime-12 r g b / 80%);
+        border-bottom: 1px solid rgb(from $lime-3 r g b / 20%);
         & .offCanvasTitle{
             color: $lime-3;
         }
+        & .btn-close{
+            fill: white!important;;
+            --bs-btn-close-color: white!important;;
+        }
     }
     & .offcanvas-body{
+        background-color: rgb(from $lime-12 r g b / 50%);
         .offCanvasNavbar{
             & .navLinkList{
                 display: flex;

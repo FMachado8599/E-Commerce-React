@@ -1,4 +1,42 @@
 @media screen and (max-width: 1100px){
+    .chamuyoSection{
+        & .chamuyoContainer{
+            grid-template-areas:"a"
+                                "b"
+                                "c";
+            height: auto;
+            margin: 0 15vw;
+            & .chamuyoTitle{
+                grid-area: a;
+            }
+            & .imgChamuyo{
+                grid-area: b;
+                position: relative;
+            }
+            & .chamuyoTitle2{
+                grid-area: c;
+            }
+        }
+    }
+    .sobreNosotrosSection{
+        & .nosotrosInfo{
+            gap: 2rem;
+            flex-direction: column;
+            & img{
+                width: 100%;
+            }
+            & .nosotrosTexto{
+                width: 100%;
+            }
+        }
+    }
+
+    .categoriasSection{
+        & .categoryCardList{
+            flex-direction: column;
+        }
+    }
+    
     footer{
         height: auto;
         max-height: 800px;

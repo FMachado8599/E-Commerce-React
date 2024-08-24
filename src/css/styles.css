@@ -72,24 +72,25 @@ table {
 }
 
 h1 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
 }
 
 h2 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 
 h3 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
-  color: rgb(67, 104, 45);
+  color: #43682d;
 }
 
 p {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: rgb(49, 26, 0);
 }
 
 .carritoContainer {
@@ -128,7 +129,7 @@ p {
   text-align: center;
   font-size: 12px;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   color: rgb(192, 213, 181);
   padding: 0px;
   margin: 0px;
@@ -160,7 +161,7 @@ p {
   padding: 0.5rem 1rem;
   border: 1px solid rgba(118, 160, 95, 0.7);
   border-radius: 10px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: rgb(118, 160, 95);
   backdrop-filter: blur(5px);
   cursor: pointer;
@@ -177,7 +178,7 @@ p {
   padding: 0.5rem 1rem;
   border: 1px solid rgba(118, 160, 95, 0.7);
   border-radius: 10px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   color: rgb(118, 160, 95);
   backdrop-filter: blur(5px);
   cursor: pointer;
@@ -210,7 +211,7 @@ p {
 .navbar .linksList li .navLink {
   text-decoration: none;
   color: rgb(45, 60, 37);
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.06rem;
@@ -225,10 +226,23 @@ p {
 }
 
 .offcanvas-Menu {
-  background-color: rgba(45, 60, 37, 0.2);
+  border: 1px solid rgb(45, 60, 37);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+.offcanvas-Menu .offcanvas-header {
+  background-color: rgb(from rgb(45, 60, 37) r g b/80%);
+  border-bottom: 1px solid rgb(from rgb(221, 231, 216) r g b/20%);
 }
 .offcanvas-Menu .offcanvas-header .offCanvasTitle {
   color: rgb(221, 231, 216);
+}
+.offcanvas-Menu .offcanvas-header .btn-close {
+  fill: white !important;
+  --bs-btn-close-color: white!important;
+}
+.offcanvas-Menu .offcanvas-body {
+  background-color: rgb(from rgb(45, 60, 37) r g b/50%);
 }
 .offcanvas-Menu .offcanvas-body .offCanvasNavbar .navLinkList {
   display: flex;
@@ -241,7 +255,7 @@ p {
 .offcanvas-Menu .offcanvas-body .offCanvasNavbar .navLinkList li .navLink {
   text-decoration: none;
   color: rgb(221, 231, 216);
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.06rem;
@@ -302,13 +316,6 @@ p {
 .header .headerInteractions .burgerButton {
   background-color: rgb(45, 60, 37);
   border: none;
-}
-
-.offcanvas-Menu .offcanvas-header {
-  background-color: black;
-}
-.offcanvas-Menu .offcanvas-body {
-  background-color: black;
 }
 
 .footer {
@@ -448,7 +455,7 @@ p {
   height: 100%;
 }
 .cart .productoCarrito .cartProductInfo .cartProductQuantity {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   color: rgba(128, 128, 128, 0.5);
   font-weight: 700;
 }
@@ -516,7 +523,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -551,7 +558,7 @@ p {
   border-radius: 1rem;
 }
 .invoice .mainPedidoInfo .orderConfirmation .confirmationTick {
-  fill: rgb(67, 104, 45);
+  fill: #43682d;
   height: 30px;
 }
 .invoice .mainPedidoInfo .textConfirmationEmail {
@@ -585,12 +592,12 @@ p {
 .invoice .summaryPedido .detallesTecnicos .detallesSeparacion .detalleIdPedido {
   border-left: 2px solid rgb(173, 200, 160);
   padding-left: 2rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 .invoice .summaryPedido .detallesTecnicos .date {
   font-weight: 600;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   color: rgba(21, 68, 0, 0.8);
 }
 .invoice .summaryPedido .detallesPedido {
@@ -741,7 +748,7 @@ p {
   height: 100%;
 }
 .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutProductQuantity {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   color: rgba(128, 128, 128, 0.5);
   font-weight: 700;
 }
@@ -794,7 +801,7 @@ p {
   width: 100%;
   justify-content: end;
   font-weight: 700;
-  color: rgb(67, 104, 45);
+  color: #43682d;
 }
 .checkout .checkoutProcedure .emptyOrderContainer {
   display: flex;
@@ -816,7 +823,7 @@ p {
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  color: rgb(67, 104, 45);
+  color: #43682d;
   text-transform: uppercase;
 }
 .checkout .checkoutProcedure .checkoutForm {
@@ -824,7 +831,7 @@ p {
 }
 .checkout .checkoutProcedure .checkoutForm .formLabel {
   color: rgb(45, 60, 37);
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 18px;
 }
@@ -836,7 +843,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -865,7 +872,7 @@ p {
 }
 .landing .landingTitle {
   font-size: 68px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   color: rgb(45, 60, 37);
@@ -877,7 +884,7 @@ p {
   padding: 1rem 1.5rem;
   border-radius: 0.7rem;
   border: 1px solid rgb(213, 186, 107);
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 1px;
   font-weight: 500;
   text-transform: uppercase;
@@ -936,7 +943,6 @@ p {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  height: 300px;
   gap: 30px;
   padding-inline: 2rem;
 }
@@ -956,66 +962,116 @@ p {
   align-items: center;
   transition: all 300ms;
   border-color: rgb(244, 240, 226);
-}
-.categoriasSection .categoryCardList .categoryCard:hover {
   border: 1px solid rgb(244, 240, 226);
   background-color: rgb(241, 235, 217);
   border-radius: 1rem;
   box-shadow: 0 5px 10px rgba(178, 106, 4, 0.21);
   padding: 1rem;
+  width: clamp(250px, 20em, 350px);
+  filter: drop-shadow(5px 5px 10px rgba(255, 255, 255, 0.3));
+  backdrop-filter: blur(10px);
 }
-.categoriasSection .categoryCardList .categoryCard:hover .category {
-  opacity: 1;
-  padding: 1rem 2rem;
+.categoriasSection .categoryCardList .categoryCard:first-child {
+  background: radial-gradient(circle at top right, rgb(118, 160, 95) 0%, hsl(from rgb(118, 160, 95) h s 0/100%) 300%);
 }
-.categoriasSection .categoryCardList .categoryCard:hover img {
-  box-shadow: none;
+.categoriasSection .categoryCardList .categoryCard:nth-child(2) {
+  background: radial-gradient(circle at top, rgb(118, 160, 95) 0%, hsl(from rgb(118, 160, 95) h 300% 0/100%) 300%);
+}
+.categoriasSection .categoryCardList .categoryCard:nth-child(3) {
+  background: radial-gradient(circle at top left, rgb(118, 160, 95) 0%, hsl(from rgb(118, 160, 95) h s 0/100%) 300%);
+}
+.categoriasSection .categoryCardList .categoryCard:hover {
+  scale: 1.05;
+}
+.categoriasSection .categoryCardList .categoryCard .categoryCardPrice {
+  color: rgb(239, 240, 238);
+}
+.categoriasSection .categoryCardList .categoryCard .categoryCardPrice span {
+  margin-right: 5px;
+  font-size: 12px;
+  color: inherit;
 }
 .categoriasSection .categoryCardList .categoryCard img {
   width: 100%;
   height: 200px;
-  background-color: rgb(234, 225, 198);
   border-radius: 0.5rem;
-  object-fit: contain;
-  box-shadow: 0 5px 10px rgba(178, 106, 4, 0.21);
+  object-fit: cover;
 }
 .categoriasSection .categoryCardList .categoryCard .category {
-  opacity: 0;
+  opacity: 1;
   z-index: 2;
+  padding: 1rem 2rem;
   transition: all 300ms;
   text-transform: capitalize;
+  font-size: 2em;
+  color: rgb(239, 240, 238);
+}
+.categoriasSection .categoryCardList .categoryCard .categoryCardDescription {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: rgb(233, 236, 231);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.categoriasSection .categoryCardList .categoryCard .categoryCardButton {
+  background-color: white;
+  border-radius: 0.5em;
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  opacity: 1;
+  color: rgb(45, 60, 37);
 }
 
 .sobreNosotrosSection {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 10rem 0;
-  padding: 20rem 2rem;
   align-items: center;
-  max-height: 800px;
-  position: relative;
-  mask-image: linear-gradient(to bottom, transparent 0%, white 15%, white 85%, transparent 100%);
 }
 .sobreNosotrosSection .nosotrosInfo {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: start;
-  max-width: 1000px;
+  align-items: center;
+  max-width: 1200px;
   background-color: rgba(241, 235, 217, 0.7);
   border-radius: 2rem;
   padding: 2rem;
   z-index: 2;
-  border: 1px solid rgb(244, 240, 226);
-  box-shadow: 0px 10px 20px rgba(49, 26, 0, 0.3);
-  backdrop-filter: sepia(100%) blur(2000px);
+  gap: 3em;
 }
 .sobreNosotrosSection .nosotrosInfo .nosotrosTexto {
   width: 50%;
+  max-width: 600px;
+}
+.sobreNosotrosSection .nosotrosInfo .nosotrosTexto h2 {
+  font-weight: bold;
+  font-size: clamp(2rem, 32px, 2.5rem);
+  color: rgb(104, 79, 0);
+}
+.sobreNosotrosSection .nosotrosInfo .nosotrosTexto p {
+  font-weight: 400;
+  margin: 16px 0;
+  line-height: 1.7rem;
+}
+.sobreNosotrosSection .nosotrosInfo .nosotrosTexto button {
+  background-color: hsl(from rgb(118, 160, 95) h 30% l/100%);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: white;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 4px 6px -1px rgb(from rgb(45, 60, 37) r g b/50%), 0 2px 4px -2px rgb(from rgb(45, 60, 37) r g b/50%);
 }
 .sobreNosotrosSection .nosotrosInfo img {
   width: 50%;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 12px -1px rgb(from rgb(49, 26, 0) r g b/25%);
 }
 .sobreNosotrosSection .nosotrosFondo {
   position: absolute;
@@ -1052,7 +1108,7 @@ p {
 }
 .ofertaSection .ofertaText h2, .ofertaSection .ofertaText p {
   color: rgb(234, 225, 198);
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .ofertaSection .ofertaText h2 {
   font-size: 4rem;
@@ -1163,7 +1219,7 @@ p {
 .contactPage .seccionContacto .formularioContacto label {
   color: rgb(6, 24, 1);
   font-weight: 700;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .contactPage .seccionContacto .formularioContacto input, .contactPage .seccionContacto .formularioContacto textarea {
   border-radius: 7px;
@@ -1172,7 +1228,7 @@ p {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 10px 10px -5px, rgba(0, 0, 0, 0.3) 0px 5px 10px -8px;
 }
 .contactPage .seccionContacto .formularioContacto button {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   border-radius: 7px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.5rem;
@@ -1288,7 +1344,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -1308,7 +1364,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -1332,7 +1388,7 @@ p {
 }
 .espacioProductos .producto .productInfo .buyButton p {
   font-size: 12px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
 }
 .espacioProductos .producto .productInfo .productAddButton, .espacioProductos .producto .productInfo .productRemoveButton {
@@ -1359,7 +1415,7 @@ p {
   gap: 10px;
 }
 .espacioProductos .producto .productInfo .quantityDiv .addedQuantity {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 
@@ -1371,7 +1427,7 @@ p {
   flex-direction: column;
 }
 .productoError .mensajeProductoError {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 5rem;
   color: orangered;
 }
@@ -1412,7 +1468,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -1446,7 +1502,7 @@ p {
   gap: 20px;
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .productDetailedPrice {
-  color: rgb(67, 104, 45);
+  color: #43682d;
   font-size: 2rem;
   font-weight: 800;
 }
@@ -1469,7 +1525,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -1485,7 +1541,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -1509,7 +1565,7 @@ p {
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .addedQuantity {
   margin: 0px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
 }
 .productAlignContainer .productCardContainer .productCard .productDetailedInfo .addedToCartSection .quantityDiv .actionButton {
@@ -1533,7 +1589,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -1549,7 +1605,7 @@ p {
   color: rgb(45, 60, 37);
   border: none;
   border-radius: 0.5rem;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   text-align: center;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
@@ -1601,6 +1657,34 @@ p {
 }
 
 @media screen and (max-width: 1100px) {
+  .chamuyoSection .chamuyoContainer {
+    grid-template-areas: "a" "b" "c";
+    height: auto;
+    margin: 0 15vw;
+  }
+  .chamuyoSection .chamuyoContainer .chamuyoTitle {
+    grid-area: a;
+  }
+  .chamuyoSection .chamuyoContainer .imgChamuyo {
+    grid-area: b;
+    position: relative;
+  }
+  .chamuyoSection .chamuyoContainer .chamuyoTitle2 {
+    grid-area: c;
+  }
+  .sobreNosotrosSection .nosotrosInfo {
+    gap: 2rem;
+    flex-direction: column;
+  }
+  .sobreNosotrosSection .nosotrosInfo img {
+    width: 100%;
+  }
+  .sobreNosotrosSection .nosotrosInfo .nosotrosTexto {
+    width: 100%;
+  }
+  .categoriasSection .categoryCardList {
+    flex-direction: column;
+  }
   footer {
     height: auto;
     max-height: 800px;
