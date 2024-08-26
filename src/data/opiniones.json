@@ -1,0 +1,32 @@
+[
+    {
+        "nombre_usuario": "MariaP",
+        "puntaje": 5,
+        "comentario": "¡Doux tiene las mejores croissants que he probado! Siempre frescas y deliciosas. El ambiente es encantador.",
+        "avatar": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe"
+    },
+    {
+        "nombre_usuario": "JuanCarlos98",
+        "puntaje": 4,
+        "comentario": "Muy buena atención y los macarons son increíbles. Lo único que podría mejorar es la variedad de panes disponibles.",
+        "avatar": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+    },
+    {
+        "nombre_usuario": "AnaLopez",
+        "puntaje": 5,
+        "comentario": "¡Simplemente espectacular! Los postres son únicos, especialmente el éclair de chocolate. Siempre me siento bienvenida.",
+        "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
+    },
+    {
+        "nombre_usuario": "RicardoM",
+        "puntaje": 3,
+        "comentario": "Los productos son buenos, pero los precios me parecieron un poco altos en comparación con otras boulangeries de la zona.",
+        "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+    },
+    {
+        "nombre_usuario": "SofiaF",
+        "puntaje": 4,
+        "comentario": "El pain au chocolat es delicioso y el café también es excelente. A veces hay que esperar mucho, pero vale la pena.",
+        "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde"
+    }
+]

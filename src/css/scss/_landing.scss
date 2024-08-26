@@ -229,6 +229,50 @@
         width: 100%;
     }
 }
+.opinionsSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 0 5vw;
+    max-width: 1300px;
+    gap: 2rem;
+    & h2{
+        font-weight: bold;
+        font-size: $heading-font-size-one;
+        color: $gold-11;
+    }
+    & .opinionsContainer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;       
+        & .opinionCard{
+            background-color: $gold-5;
+            padding: 1rem;
+            border-radius: .5rem;
+            width: clamp(250px, 30vw, 300px);
+            & .opinionUser{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .opinionUserInfo{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                }
+                & img{
+                    max-width: 75px;
+                    border-radius: 99%;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                }
+            }
+            .opinionCardComment{
+                padding: 1rem;
+            }
+        }
+    }
+}
 @keyframes movingAnimation{
     from{
         opacity: 0;

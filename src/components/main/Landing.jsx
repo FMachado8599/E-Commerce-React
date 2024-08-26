@@ -9,6 +9,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from "../../firebase/config"
 import { DataContext } from '../DataContext';
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import opiniones from "../../data/opiniones.json"
 
 const Landing = () => {
 
@@ -92,6 +93,25 @@ const Landing = () => {
             <button className='nosotrosMoreInfoButton'>Conoce Más Sobre Doux</button>
           </div>
         </div>
+      </section>
+      <section className='opinionsSection'>
+        <h2>Lo que dicen de Nosotros:</h2>
+        <div className="opinionsContainer">
+        {opiniones.map((opinion, index) => (
+          <div key={index} className="opinionCard">
+            <div className="opinionUser">
+              <div className="opinionUserInfo">
+                <img src={opinion.avatar} alt="" />
+                <h3 className="opinionCardName">{opinion.nombre_usuario}</h3>
+              </div>
+              <div className="opinionCardScore">{opinion.puntaje}</div>
+            </div>
+
+            <p className="opinionCardComment">"{opinion.comentario}"</p>
+          </div>
+        ))}
+        </div>
+
       </section>
       <section className='contactSection' ></section>
       {/* <img className='imageFooter' src={imgFooter} alt="panes prontos para la venta almacenados en bandeja" /> */}
