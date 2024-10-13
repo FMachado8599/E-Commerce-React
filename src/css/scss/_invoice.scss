@@ -9,9 +9,11 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 2rem;
-        gap: 20px;
         & span{
             font-weight: 700;
+        }
+        & .main-title{
+            text-align: center;
         }
         & .orderConfirmation{
             display: flex;
@@ -21,20 +23,26 @@
             background-color: $lime-3;
             padding: 2rem;
             border-radius: 1rem;
+            margin: 20px 0px;
+            max-width: 90vw;
             & .confirmationTick{
                 fill:$lime-11;
                 height: 30px;
             }
         }
         & .textConfirmationEmail{
-            max-width: 1000px;
+            max-width: 600px;
+            margin: 0px 5%;
             text-align: center;
+            font-size: .7rem;
+            color: rgba(from $lime-12 r g b / 50%);
+            line-height: .8rem;
         }
     }
     & .summaryPedido{
         background-color: $lime-1;
         padding: 2rem;
-        width: 60%;
+        width: clamp(380px, 60vw, 1000px);
         max-width: 1000px;
         & .detallesTecnicos{
             display: flex;
@@ -105,10 +113,12 @@
                 & p{
                     font-weight: 400;
                 }
-                & .summaryProductImg{
-                    width: 100px;
-                    border-radius: 0.5rem;
-                    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                & .summaryProductImgContainer{
+                    & .summaryProductImg{
+                        width: 100px;
+                        border-radius: 0.5rem;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    }
                 }
                 & .summaryProductName{
                     color: $lime-12;

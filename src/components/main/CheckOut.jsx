@@ -55,7 +55,6 @@ const CheckOut = () => {
               </svg>
               <p>Tu orden <span>#{pedidoId}</span> esta siendo procesada</p>
             </div>
-            
             <p className='textConfirmationEmail'>Te hemos enviado un email a <span>{cliente.email}</span> con tu confirmacion de pedido y el recibo. Si el email no llega en el correr de los proximos 2 minutos, por favor revise su carpeta de spam para ver si el email fue redirigido hacia ahi</p>
           </div>
           <div className='summaryPedido'>
@@ -64,7 +63,6 @@ const CheckOut = () => {
                   <h3>Detalles del Pedido</h3>
                   <p className='detalleIdPedido'>#{pedidoId}</p>
                 </div>
-
                 <p className='date'>{orderDateSummary}</p>
               </div>
               <div className='detallesPedido'>
@@ -89,11 +87,15 @@ const CheckOut = () => {
               <ul className='itemsSummary'>
                 {cartSummary.map((producto, index) => (
                         <li key={index} className='summaryProductInfo'>
-                            <img src={producto.thumbnail} alt="" className='summaryProductImg' />
-                            <h3 className='summaryProductName'>{producto.nombre}</h3>
-                            <p className='summaryProductQuantity'>x{producto.quantity}u</p>
-                            <p className='summaryProductPrice'>{producto.precio}<span className='currency'> USD</span></p>
-                            <p className='summaryProductPrice'>Total: {producto.precio*producto.quantity} USD</p>
+                            <div className="summaryProductImgContainer">
+                              <img src={producto.thumbnail} alt="" className='summaryProductImg' />
+                            </div>
+                            <div className="summaryProductDataContainer">
+                              <h3 className='summaryProductName'>{producto.nombre}</h3>
+                              <p className='summaryProductQuantity'>{producto.quantity}u</p>
+                              <p className='summaryProductPrice'>{producto.precio}<span className='currency'> USD</span></p>
+                              <p className='summaryProductPrice'>Total: {producto.precio*producto.quantity} USD</p>
+                            </div>
                         </li>
                     ))}
               </ul>

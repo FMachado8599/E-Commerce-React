@@ -72,4 +72,55 @@
             }
         }
     }
+    .invoice{
+        & .mainPedidoInfo{
+            & .orderConfirmation{
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        & .summaryPedido{
+            flex-direction: column;
+            & .detallesTecnicos{
+                align-items: center;
+                justify-content: start;
+                flex-direction: column;
+                & .detallesSeparacion{
+                    flex-direction: column;
+                    & h3{
+                        padding-bottom: 1rem ;
+                    }
+                    & .detalleIdPedido{
+                        border-left: none;
+                        padding-left: 0rem;
+                        border-top: 2px solid $lime-6;
+                        padding-top: 1rem;
+                    }
+                }
+                & .date{
+                    padding-top: 1rem;
+                    text-align: start;
+                }
+            }
+            & .detallesPedido{
+                flex-direction: column;
+            }
+            & h4{
+                padding-bottom: 1rem;
+            }
+            & .itemsSummary{
+                & .summaryProductInfo{
+                    & .summaryProductDataContainer{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        justify-content: flex-start;
+                        & h3{
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

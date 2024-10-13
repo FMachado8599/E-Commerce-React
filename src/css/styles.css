@@ -482,6 +482,7 @@ p {
   justify-content: center;
   align-items: center;
   height: 25px;
+  width: 25px;
   aspect-ratio: 1/1;
   background-color: rgb(192, 213, 181);
   border: transparent;
@@ -543,10 +544,12 @@ p {
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  gap: 20px;
 }
 .invoice .mainPedidoInfo span {
   font-weight: 700;
+}
+.invoice .mainPedidoInfo .main-title {
+  text-align: center;
 }
 .invoice .mainPedidoInfo .orderConfirmation {
   display: flex;
@@ -556,19 +559,25 @@ p {
   background-color: rgb(221, 231, 216);
   padding: 2rem;
   border-radius: 1rem;
+  margin: 20px 0px;
+  max-width: 90vw;
 }
 .invoice .mainPedidoInfo .orderConfirmation .confirmationTick {
   fill: #43682d;
   height: 30px;
 }
 .invoice .mainPedidoInfo .textConfirmationEmail {
-  max-width: 1000px;
+  max-width: 600px;
+  margin: 0px 5%;
   text-align: center;
+  font-size: 0.7rem;
+  color: rgba(from rgb(45, 60, 37) r g b/50%);
+  line-height: 0.8rem;
 }
 .invoice .summaryPedido {
   background-color: rgb(239, 240, 238);
   padding: 2rem;
-  width: 60%;
+  width: clamp(380px, 60vw, 1000px);
   max-width: 1000px;
 }
 .invoice .summaryPedido .detallesTecnicos {
@@ -640,7 +649,7 @@ p {
 .invoice .summaryPedido .itemsSummary .summaryProductInfo p {
   font-weight: 400;
 }
-.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductImg {
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductImgContainer .summaryProductImg {
   width: 100px;
   border-radius: 0.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
@@ -774,6 +783,7 @@ p {
   justify-content: center;
   align-items: center;
   height: 25px;
+  width: 25px;
   aspect-ratio: 1/1;
   background-color: rgb(192, 213, 181);
   border: transparent;
@@ -1441,6 +1451,7 @@ p {
   justify-content: center;
   align-items: center;
   height: 25px;
+  width: 25px;
   aspect-ratio: 1/1;
   background-color: rgb(192, 213, 181);
   border: transparent;
@@ -1618,6 +1629,7 @@ p {
   justify-content: center;
   align-items: center;
   height: 25px;
+  width: 25px;
   aspect-ratio: 1/1;
   background-color: rgb(192, 213, 181);
   border: transparent;
@@ -1756,6 +1768,49 @@ p {
   div .categoryNav .categoryList {
     flex-direction: column;
     gap: 20px;
+  }
+  .invoice .mainPedidoInfo .orderConfirmation {
+    flex-direction: column;
+    text-align: center;
+  }
+  .invoice .summaryPedido {
+    flex-direction: column;
+  }
+  .invoice .summaryPedido .detallesTecnicos {
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+  }
+  .invoice .summaryPedido .detallesTecnicos .detallesSeparacion {
+    flex-direction: column;
+  }
+  .invoice .summaryPedido .detallesTecnicos .detallesSeparacion h3 {
+    padding-bottom: 1rem;
+  }
+  .invoice .summaryPedido .detallesTecnicos .detallesSeparacion .detalleIdPedido {
+    border-left: none;
+    padding-left: 0rem;
+    border-top: 2px solid rgb(173, 200, 160);
+    padding-top: 1rem;
+  }
+  .invoice .summaryPedido .detallesTecnicos .date {
+    padding-top: 1rem;
+    text-align: start;
+  }
+  .invoice .summaryPedido .detallesPedido {
+    flex-direction: column;
+  }
+  .invoice .summaryPedido h4 {
+    padding-bottom: 1rem;
+  }
+  .invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+  }
+  .invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer h3 {
+    font-size: 1.3rem;
   }
 }
 
