@@ -17,22 +17,6 @@ const [productList, setProductList] = useState([])
 const [categoryList, setCategoryList] = useState([])
 
 useEffect(() => {
-
-  /* Datos dummy en Json */
-  // Cargar todas las categorias al contexto
-  // fetch("/src/data/categorias.json")
-  // .then(respuesta => respuesta.json())
-  // .then(jsonCategorias => {
-  //   setCategoryList(jsonCategorias);
-  // });
-  
-  // // Cargar todos los productos al contexto
-  // fetch("/src/data/productos.json")
-  // .then(respuesta => respuesta.json())
-  // .then(jsonProductos => {
-  //   setProductList(jsonProductos);
-  // });
-
   /* Traer datos de Firebase */
   const productRef = collection(db, "productos")
 

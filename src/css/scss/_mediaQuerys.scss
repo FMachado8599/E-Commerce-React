@@ -74,6 +74,11 @@
     }
     .invoice{
         & .mainPedidoInfo{
+            height: 80svh;
+            & .thanksTitle{
+                font-size: 2rem;
+                max-width: 90%;
+            }
             & .orderConfirmation{
                 flex-direction: column;
                 text-align: center;
@@ -117,6 +122,28 @@
                         justify-content: flex-start;
                         & h3{
                             font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 700px) // Exception for mobile
+{
+    .checkout{
+        & .checkoutProcedure{
+            flex-direction: column;
+            & .checkoutSummary{
+                & .productCheckout{
+                    & .checkoutProductInfo{
+                        & .checkoutNameRow{
+                            & .checkoutProductName{
+                                font-size: 1rem;
+                            }
+                        }
+                        & .checkoutProductQuantity{
+                            font-size: .8rem;
                         }
                     }
                 }

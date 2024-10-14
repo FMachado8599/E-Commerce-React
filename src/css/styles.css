@@ -548,7 +548,7 @@ p {
 .invoice .mainPedidoInfo span {
   font-weight: 700;
 }
-.invoice .mainPedidoInfo .main-title {
+.invoice .mainPedidoInfo .thanksTitle {
   text-align: center;
 }
 .invoice .mainPedidoInfo .orderConfirmation {
@@ -639,24 +639,50 @@ p {
   gap: 20px;
 }
 .invoice .summaryPedido .itemsSummary .summaryProductInfo {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  gap: 20px;
 }
 .invoice .summaryPedido .itemsSummary .summaryProductInfo p {
   font-weight: 400;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductImgContainer {
+  grid-area: 1/1/2/2;
 }
 .invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductImgContainer .summaryProductImg {
   width: 100px;
   border-radius: 0.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductName {
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer {
+  grid-area: 1/2/2/3;
+  display: grid;
+  grid-template-columns: 50% repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer .summaryProductName {
   color: rgb(45, 60, 37);
   font-size: 24px;
+  grid-area: 1/1/2/2;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer p:nth-child(2) {
+  grid-area: 1/2/2/3;
+  padding: 5px 0;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer p:nth-child(3) {
+  grid-area: 1/3/2/4;
+  padding: 5px 0;
+}
+.invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer p:nth-child(4) {
+  grid-area: 1/4/2/5;
+  padding: 5px 0;
 }
 .invoice .summaryPedido .totalOrden {
   margin-top: 1rem;
@@ -736,7 +762,7 @@ p {
   align-items: center;
 }
 .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutNameRow .checkoutProductName {
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: 800;
   margin: 0;
 }
@@ -758,7 +784,7 @@ p {
 }
 .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutProductQuantity {
   font-family: "Inter", sans-serif;
-  color: rgba(128, 128, 128, 0.5);
+  color: rgba(128, 128, 128, 0.8);
   font-weight: 700;
 }
 .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutActionsRow {
@@ -1769,6 +1795,13 @@ p {
     flex-direction: column;
     gap: 20px;
   }
+  .invoice .mainPedidoInfo {
+    height: 80svh;
+  }
+  .invoice .mainPedidoInfo .thanksTitle {
+    font-size: 2rem;
+    max-width: 90%;
+  }
   .invoice .mainPedidoInfo .orderConfirmation {
     flex-direction: column;
     text-align: center;
@@ -1811,6 +1844,17 @@ p {
   }
   .invoice .summaryPedido .itemsSummary .summaryProductInfo .summaryProductDataContainer h3 {
     font-size: 1.3rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .checkout .checkoutProcedure {
+    flex-direction: column;
+  }
+  .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutNameRow .checkoutProductName {
+    font-size: 1rem;
+  }
+  .checkout .checkoutProcedure .checkoutSummary .productCheckout .checkoutProductInfo .checkoutProductQuantity {
+    font-size: 0.8rem;
   }
 }
 

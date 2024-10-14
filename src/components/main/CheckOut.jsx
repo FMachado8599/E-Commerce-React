@@ -48,12 +48,12 @@ const CheckOut = () => {
     return (
         <div className="invoice">
           <div className='mainPedidoInfo'>
-            <h1 className="main-title">Muchas gracias por tu compra!</h1>
+            <h1 className="thanksTitle">Muchas gracias por tu compra!</h1>
             <div className='orderConfirmation'>
               <svg xmlns="http://www.w3.org/2000/svg" class="confirmationTick" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
               </svg>
-              <p>Tu orden <span>#{pedidoId}</span> esta siendo procesada</p>
+              <p>Tu orden con ID <span>#{pedidoId}</span> esta siendo procesada</p>
             </div>
             <p className='textConfirmationEmail'>Te hemos enviado un email a <span>{cliente.email}</span> con tu confirmacion de pedido y el recibo. Si el email no llega en el correr de los proximos 2 minutos, por favor revise su carpeta de spam para ver si el email fue redirigido hacia ahi</p>
           </div>
@@ -92,15 +92,15 @@ const CheckOut = () => {
                             </div>
                             <div className="summaryProductDataContainer">
                               <h3 className='summaryProductName'>{producto.nombre}</h3>
-                              <p className='summaryProductQuantity'>{producto.quantity}u</p>
+                              <p className='summaryProductQuantity'>x{producto.quantity}</p>
                               <p className='summaryProductPrice'>{producto.precio}<span className='currency'> USD</span></p>
-                              <p className='summaryProductPrice'>Total: {producto.precio*producto.quantity} USD</p>
+                              <p className='summaryProductPrice'>{producto.precio*producto.quantity} USD</p>
                             </div>
                         </li>
                     ))}
               </ul>
               <div className='totalOrden'>
-                <p><span>Sub total: </span>{priceSummary-(priceSummary*0.22).toFixed(2)}</p>
+                <p><span>Sub total: </span>{priceSummary-(priceSummary*0.22).toFixed(3)}</p>
                 <p><span>IVA: </span> {(priceSummary*0.22).toFixed(2)}</p>
                 <p><span>Total: </span>{priceSummary}</p>
               </div>
@@ -132,10 +132,10 @@ const CheckOut = () => {
                           <h3 className='checkoutProductPrice'>{producto.precio}<span className='currency'>USD</span></h3>
                           <div className='checkoutProductActions'>
                               <button className="checkoutProductActionButton" onClick={() => removeFromCart(producto)} >
-                                <img className='actionIcon' src={menos} alt="Simbolo de menos" />
+                                <img className='actionIcon' src={menos} alt="-" />
                               </button>
                               <button className="checkoutProductActionButton" onClick={() => addToCart(producto)} >
-                                <img className='actionIcon' src={mas} alt="Simbolo de mas" />
+                                <img className='actionIcon' src={mas} alt="+" />
                               </button>
                           </div>
                         </div>

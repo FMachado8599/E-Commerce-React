@@ -52,7 +52,7 @@
                         justify-content: space-between;
                         align-items: center;
                         & .checkoutProductName{
-                            font-size: 18px;
+                            font-size: 1.2rem;
                             font-weight: 800;
                             margin: 0;
                         }
@@ -76,7 +76,7 @@
                     }
                     & .checkoutProductQuantity{
                         font-family: $font-p;
-                        color:  rgba(128, 128, 128,.5);
+                        color:  rgba(128, 128, 128,.8);
                         font-weight: 700;
                     }
                     & .checkoutActionsRow{
